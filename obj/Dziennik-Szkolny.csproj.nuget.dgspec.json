@@ -43,6 +43,40 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.3.0, )"
+            },
+            "EntityFramework6.Npgsql": {
+              "target": "Package",
+              "version": "[6.3.0, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[4.0.10, )"
+            },
+            "System.Buffers": {
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
+            "System.Memory": {
+              "target": "Package",
+              "version": "[4.5.3, )"
+            },
+            "System.Numerics.Vectors": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "System.Threading.Tasks.Extensions": {
+              "target": "Package",
+              "version": "[4.5.2, )"
+            },
+            "System.ValueTuple": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
