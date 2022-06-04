@@ -23,6 +23,8 @@ namespace Dziennik_Szkolny
         public MainWindow()
         {
             InitializeComponent();
+
+            //test
         }
     }
 }
