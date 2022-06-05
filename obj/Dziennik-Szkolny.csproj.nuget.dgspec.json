@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\git\\DziennikSzkolny\\P3Projekt\\Dziennik-Szkolny.csproj": {}
+    "C:\\Users\\mufcx\\source\\repos\\neriousy\\P3Projekt\\Dziennik-Szkolny.csproj": {}
   },
   "projects": {
-    "D:\\git\\DziennikSzkolny\\P3Projekt\\Dziennik-Szkolny.csproj": {
+    "C:\\Users\\mufcx\\source\\repos\\neriousy\\P3Projekt\\Dziennik-Szkolny.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\git\\DziennikSzkolny\\P3Projekt\\Dziennik-Szkolny.csproj",
+        "projectUniqueName": "C:\\Users\\mufcx\\source\\repos\\neriousy\\P3Projekt\\Dziennik-Szkolny.csproj",
         "projectName": "Dziennik-Szkolny",
-        "projectPath": "D:\\git\\DziennikSzkolny\\P3Projekt\\Dziennik-Szkolny.csproj",
-        "packagesPath": "C:\\Users\\hejmo\\.nuget\\packages\\",
-        "outputPath": "D:\\git\\DziennikSzkolny\\P3Projekt\\obj\\",
+        "projectPath": "C:\\Users\\mufcx\\source\\repos\\neriousy\\P3Projekt\\Dziennik-Szkolny.csproj",
+        "packagesPath": "C:\\Users\\mufcx\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mufcx\\source\\repos\\neriousy\\P3Projekt\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\hejmo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\mufcx\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -95,7 +91,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

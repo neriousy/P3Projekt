@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace Dziennik_Szkolny
 {
@@ -23,8 +24,12 @@ namespace Dziennik_Szkolny
         public MainWindow()
         {
             InitializeComponent();
-
-            //test
+            using (var context = new MyContext())
+            {
+                var studenci = context.Uzytkownicy.ToArray();
+                var ilosc = studenci.Length;
+                Trace.WriteLine("Ilość wierszy w bazie: {0}", ilosc.ToString());
+            }
         }
     }
 }
