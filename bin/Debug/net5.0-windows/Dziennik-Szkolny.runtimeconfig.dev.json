@@ -1,8 +1,13 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
+<<<<<<< HEAD
       "C:\\Users\\kazik\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\kazik\\.nuget\\packages"
+=======
+      "C:\\Users\\mufcx\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\mufcx\\.nuget\\packages"
+>>>>>>> 809f771be8ef51cd1cf8c3e85ff76c6497c67bf0
     ]
   }
 }
