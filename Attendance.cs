@@ -14,10 +14,12 @@ namespace Dziennik_Szkolny
         public DateTime date { get; set; }
         public string attendance { get; set; }
         public string islate { get; set; }
-        //[ForeignKey("user_id")]
-        public int user_id { get; set; }
-        //[ForeignKey("lessons")]
-        public string lesson_id { get; set; }
+
+        public int student_id { get; set; }
+        public Users Users { get; set; }
+
+        public int lesson_id { get; set; }
+        public Lessons Lessons { get; set; }
 
         public string Obecnosc
         {

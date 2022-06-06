@@ -5,14 +5,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dziennik_Szkolny
 {
-    [Table("users")]
-    public class Users
+    [Table("parents")]
+    public class Parents
     {
-
         [Key]
         [Required]
         [Index(IsUnique = true)]
-        public int user_id { get; set; }
+        public int parent_id { get; set; }
 
         [MinLength(2), MaxLength(20)]
         public string name { get; set; }
@@ -22,14 +21,10 @@ namespace Dziennik_Szkolny
         public string email { get; set; }
         public string passwd { get; set; }
 
-        public int class_id { get; set; }
-        public Classes Classes { get; set; }
+        [ForeignKey("parent_id")]
 
-        [ForeignKey("student_id")]
-        public ICollection<Attendance> Obecnosci { get; set; }
-        public ICollection<Grades> Oceny { get; set; }
-        public ICollection<Warnings> Uwagi { get; set; }
         public ICollection<Parent_user> Rodzice_ucznia { get; set; }
+
 
         [NotMapped]
         public string Dane

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -7,16 +8,17 @@ namespace Dziennik_Szkolny
     [Table("classes")]
     public class Classes
     {
-        //[Key]
-        //[Column("UsosId")]
-        //public uint Id { get; set; }
 
         [Key]
         [Required]
         [Index(IsUnique = true)]
-        public string class_id { get; set; }
+        public int class_id { get; set; }
         public string startyear { get; set; }
         public string course { get; set; }
+
+        [ForeignKey("class_id")]
+        public ICollection<Users> Uzytkownicy { get; set; }
+        public ICollection<Lessons> Lekcje { get; set; }
 
         [NotMapped]
         public string Opis
