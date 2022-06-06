@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Dziennik_Szkolny
 {
     [Table("classes")]
-    public class Student
+    public class Classes
     {
         //[Key]
         //[Column("UsosId")]
@@ -15,9 +15,7 @@ namespace Dziennik_Szkolny
         [Required]
         [Index(IsUnique = true)]
         public string class_id { get; set; }
-
         public string startyear { get; set; }
-
         public string course { get; set; }
 
         [NotMapped]
