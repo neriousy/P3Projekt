@@ -10,10 +10,10 @@ namespace Dziennik_Szkolny
     public class MyContext : DbContext
     {
         //public DbSet<Car> Cars { get; set; }
-        public DbSet<Users> Uzytkownicy { get; set; }
+        public DbSet<Students> Studenci { get; set; }
         public DbSet<Attendance> Obecnosc { get; set; }
         public DbSet<Classes> Klasy { get; set; }
-        public DbSet<Grades> Obecny { get; set; }
+        public DbSet<Grades> Oceny { get; set; }
         public DbSet<Lessons> Lekcje { get; set; }
         public DbSet<Parent_user> Rodzice_ucznia { get; set; }
         public DbSet<Subjects> Przedmioty { get; set; }

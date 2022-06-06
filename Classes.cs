@@ -17,7 +17,7 @@ namespace Dziennik_Szkolny
         public string course { get; set; }
 
         [ForeignKey("class_id")]
-        public ICollection<Users> Uzytkownicy { get; set; }
+        public ICollection<Students> Uzytkownicy { get; set; }
         public ICollection<Lessons> Lekcje { get; set; }
 
         [NotMapped]

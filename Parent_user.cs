@@ -9,7 +9,7 @@ namespace Dziennik_Szkolny
     {
         [Key]
         public int student_id { get; set; }
-        public Users Users { get; set; }
+        public Students Users { get; set; }
         [Key]
         public int parent_id { get; set; }
         public Parents Parents { get; set; }
