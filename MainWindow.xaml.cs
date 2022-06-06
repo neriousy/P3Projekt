@@ -26,7 +26,7 @@ namespace Dziennik_Szkolny
             InitializeComponent();
             using (var context = new MyContext())
             {
-                var studenci = context.Uzytkownicy.ToArray();
+                var studenci = context.Rodzice.ToArray();
                 var ilosc = studenci.Length;
                 Trace.WriteLine("Ilość wierszy w bazie: {0}", ilosc.ToString());
             }
