@@ -16,7 +16,7 @@ namespace Dziennik_Szkolny
         public DateTime date { get; set; }
         public string desc { get; set; }
         public int student_id { get; set; }
-        public Users Users { get; set; }
+        public Students Users { get; set; }
         public int teacher_id { get; set; }
         public Teachers Teachers { get; set; }
         public int subject_id { get; set; }

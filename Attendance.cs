@@ -16,7 +16,7 @@ namespace Dziennik_Szkolny
         public string islate { get; set; }
 
         public int student_id { get; set; }
-        public Users Users { get; set; }
+        public Students Users { get; set; }
 
         public int lesson_id { get; set; }
         public Lessons Lessons { get; set; }

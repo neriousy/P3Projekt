@@ -27,7 +27,8 @@ namespace Dziennik_Szkolny
             using (var context = new MyContext())
             {
                 var studenci = context.Klasy.ToArray();
-                var studenci1 = context.Uzytkownicy.ToArray();
+                var studenci1 = context.Studenci.ToArray();
+                var Ocenki = context.Oceny.ToArray();
                 var ilosc = studenci[studenci1[20].class_id].Uzytkownicy.Count;
                 Test.Text = ilosc.ToString();
             }
