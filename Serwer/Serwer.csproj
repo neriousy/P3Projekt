@@ -78,6 +78,7 @@
     <Compile Include="Grades.cs" />
     <Compile Include="Lessons.cs" />
     <Compile Include="MyContext.cs" />
+    <Compile Include="Networking.cs" />
     <Compile Include="NpgSqlConfiguration.cs" />
     <Compile Include="Parents.cs" />
     <Compile Include="Parent_user.cs" />
@@ -90,7 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Serwer_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.3.0" />
