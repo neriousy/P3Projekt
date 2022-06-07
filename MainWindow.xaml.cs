@@ -23,6 +23,9 @@ namespace Dziennik_Szkolny
     {
         public MainWindow()
         {
+            LoginWindow lw = new LoginWindow();
+            lw.Show();
+
             InitializeComponent();
             using (var context = new MyContext())
             {
