@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace Dziennik_Szkolny
+namespace Serwer
 {
 
     [Table("lessons")]

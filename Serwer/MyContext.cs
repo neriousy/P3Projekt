@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 
-namespace Dziennik_Szkolny
+namespace Serwer
 {
     public class MyContext : DbContext
     {

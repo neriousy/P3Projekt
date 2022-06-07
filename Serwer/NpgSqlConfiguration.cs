@@ -7,7 +7,7 @@ using Npgsql;
 using System.Data.Entity;
 
 
-namespace Dziennik_Szkolny
+namespace Serwer
 {
     class NpgSqlConfiguration : DbConfiguration
     {

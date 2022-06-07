@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Dziennik_Szkolny
+namespace Serwer
 {
-    [Table("teachers")]
-    public class Teachers
+    [Table("students")]
+    public class Students
     {
+
         [Key]
         [Required]
         [Index(IsUnique = true)]
-        public int teacher_id { get; set; }
+        public int student_id { get; set; }
 
         [MinLength(2), MaxLength(20)]
         public string name { get; set; }
@@ -21,16 +22,14 @@ namespace Dziennik_Szkolny
         public string email { get; set; }
         public string passwd { get; set; }
 
-        [ForeignKey("teacher_id")]
-        public ICollection<Lessons> Lekcje { get; set; }
+        public int class_id { get; set; }
+        public Classes Classes { get; set; }
 
-        [ForeignKey("teacher_id")]
-
+        [ForeignKey("student_id")]
+        public ICollection<Attendance> Obecnosci { get; set; }
         public ICollection<Grades> Oceny { get; set; }
-
-        [ForeignKey("teacher_id")]
-
         public ICollection<Warnings> Uwagi { get; set; }
+        public ICollection<Parent_user> Rodzice_ucznia { get; set; }
 
         [NotMapped]
         public string Dane
