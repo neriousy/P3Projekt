@@ -20,6 +20,8 @@ namespace Dziennik_Szkolny
     {
         public LoginWindow()
         {
+            MainWindow mw = new MainWindow();
+            mw.Show();
             InitializeComponent();
         }
         public bool darkThemeTurnedOn { get; set; }

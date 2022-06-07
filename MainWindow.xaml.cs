@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
+using MaterialDesignThemes;
 
 namespace Dziennik_Szkolny
 {
@@ -23,9 +24,6 @@ namespace Dziennik_Szkolny
     {
         public MainWindow()
         {
-            LoginWindow lw = new LoginWindow();
-            lw.Show();
-
             InitializeComponent();
             using (var context = new MyContext())
             {
@@ -33,8 +31,25 @@ namespace Dziennik_Szkolny
                 var studenci1 = context.Studenci.ToArray();
                 var Ocenki = context.Oceny.ToArray();
                 var ilosc = studenci[studenci1[20].class_id].Uzytkownicy.Count;
-                Test.Text = ilosc.ToString();
+                //Test.Text = ilosc.ToString();
             }
+        }
+
+        private void exitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void hideMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            hideMenuButton.Visibility = Visibility.Collapsed;
+            showMenuButton.Visibility = Visibility.Visible;
+        }
+
+        private void showMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            hideMenuButton.Visibility = Visibility.Visible;
+            showMenuButton.Visibility = Visibility.Collapsed;
         }
     }
 }
