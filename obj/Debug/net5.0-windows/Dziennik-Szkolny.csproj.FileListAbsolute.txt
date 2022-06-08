@@ -31,6 +31,7 @@ D:\git\DziennikSzkolny\P3Projekt\bin\Debug\net5.0-windows\runtimes\win-x86\nativ
 D:\git\DziennikSzkolny\P3Projekt\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\git\DziennikSzkolny\P3Projekt\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\git\DziennikSzkolny\P3Projekt\obj\Debug\net5.0-windows\Dziennik-Szkolny.csproj.CopyComplete
+<<<<<<< HEAD
 C:\Users\mufcx\source\repos\neriousy\P3Projekt\bin\Debug\net5.0-windows\Dziennik-Szkolny.exe
 C:\Users\mufcx\source\repos\neriousy\P3Projekt\bin\Debug\net5.0-windows\Dziennik-Szkolny.dll.config
 C:\Users\mufcx\source\repos\neriousy\P3Projekt\bin\Debug\net5.0-windows\Dziennik-Szkolny.deps.json
@@ -70,3 +71,38 @@ C:\Users\mufcx\source\repos\neriousy\P3Projekt\bin\Debug\net5.0-windows\Material
 C:\Users\mufcx\source\repos\neriousy\P3Projekt\obj\Debug\net5.0-windows\Views\LoginWindow.g.cs
 C:\Users\mufcx\source\repos\neriousy\P3Projekt\obj\Debug\net5.0-windows\App.baml
 C:\Users\mufcx\source\repos\neriousy\P3Projekt\obj\Debug\net5.0-windows\Views\LoginWindow.baml
+=======
+C:\Users\admin\Source\Repos\P3Projekt\bin\Debug\net5.0-windows\Dziennik-Szkolny.exe
+C:\Users\admin\Source\Repos\P3Projekt\bin\Debug\net5.0-windows\Dziennik-Szkolny.deps.json
+C:\Users\admin\Source\Repos\P3Projekt\bin\Debug\net5.0-windows\Dziennik-Szkolny.runtimeconfig.json
+C:\Users\admin\Source\Repos\P3Projekt\bin\Debug\net5.0-windows\Dziennik-Szkolny.runtimeconfig.dev.json
+C:\Users\admin\Source\Repos\P3Projekt\bin\Debug\net5.0-windows\Dziennik-Szkolny.dll
+C:\Users\admin\Source\Repos\P3Projekt\bin\Debug\net5.0-windows\Dziennik-Szkolny.pdb
+C:\Users\admin\Source\Repos\P3Projekt\bin\Debug\net5.0-windows\EntityFramework.SqlServer.dll
+C:\Users\admin\Source\Repos\P3Projekt\bin\Debug\net5.0-windows\EntityFramework.dll
+C:\Users\admin\Source\Repos\P3Projekt\bin\Debug\net5.0-windows\EntityFramework6.Npgsql.dll
+C:\Users\admin\Source\Repos\P3Projekt\bin\Debug\net5.0-windows\Npgsql.dll
+C:\Users\admin\Source\Repos\P3Projekt\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
+C:\Users\admin\Source\Repos\P3Projekt\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\admin\Source\Repos\P3Projekt\bin\Debug\net5.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\admin\Source\Repos\P3Projekt\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\admin\Source\Repos\P3Projekt\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\admin\Source\Repos\P3Projekt\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\admin\Source\Repos\P3Projekt\obj\Debug\net5.0-windows\Dziennik-Szkolny.csproj.AssemblyReference.cache
+C:\Users\admin\Source\Repos\P3Projekt\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\admin\Source\Repos\P3Projekt\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\admin\Source\Repos\P3Projekt\obj\Debug\net5.0-windows\Dziennik-Szkolny_MarkupCompile.cache
+C:\Users\admin\Source\Repos\P3Projekt\obj\Debug\net5.0-windows\Dziennik-Szkolny_MarkupCompile.lref
+C:\Users\admin\Source\Repos\P3Projekt\obj\Debug\net5.0-windows\MainWindow.baml
+C:\Users\admin\Source\Repos\P3Projekt\obj\Debug\net5.0-windows\Dziennik-Szkolny.g.resources
+C:\Users\admin\Source\Repos\P3Projekt\obj\Debug\net5.0-windows\Dziennik-Szkolny.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\Source\Repos\P3Projekt\obj\Debug\net5.0-windows\Dziennik-Szkolny.AssemblyInfoInputs.cache
+C:\Users\admin\Source\Repos\P3Projekt\obj\Debug\net5.0-windows\Dziennik-Szkolny.AssemblyInfo.cs
+C:\Users\admin\Source\Repos\P3Projekt\obj\Debug\net5.0-windows\Dziennik-Szkolny.csproj.CoreCompileInputs.cache
+C:\Users\admin\Source\Repos\P3Projekt\obj\Debug\net5.0-windows\Dziennik-Szkolny.csproj.CopyComplete
+C:\Users\admin\Source\Repos\P3Projekt\obj\Debug\net5.0-windows\Dziennik-Szkolny.dll
+C:\Users\admin\Source\Repos\P3Projekt\obj\Debug\net5.0-windows\refint\Dziennik-Szkolny.dll
+C:\Users\admin\Source\Repos\P3Projekt\obj\Debug\net5.0-windows\Dziennik-Szkolny.pdb
+C:\Users\admin\Source\Repos\P3Projekt\obj\Debug\net5.0-windows\Dziennik-Szkolny.genruntimeconfig.cache
+C:\Users\admin\Source\Repos\P3Projekt\obj\Debug\net5.0-windows\ref\Dziennik-Szkolny.dll
+>>>>>>> d8274a16d51401b73cceabd01fbb8291b0b520e1

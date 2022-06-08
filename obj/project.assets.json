@@ -37,6 +37,7 @@
           "lib/netstandard2.1/EntityFramework6.Npgsql.dll": {}
         }
       },
+<<<<<<< HEAD
       "MaterialDesignColors/2.0.1": {
         "type": "package",
         "compile": {
@@ -61,6 +62,8 @@
           "build/MaterialDesignThemes.targets": {}
         }
       },
+=======
+>>>>>>> d8274a16d51401b73cceabd01fbb8291b0b520e1
       "Microsoft.CSharp/4.6.0": {
         "type": "package",
         "compile": {
@@ -460,6 +463,7 @@
         "postgresql.png"
       ]
     },
+<<<<<<< HEAD
     "MaterialDesignColors/2.0.1": {
       "sha512": "Azl8nN23SD6QPE0PdsfpKiIqWTvH7rzXwgXPiFSEt91NFOrwB5cx3iq/sbINWMZunhXJ32+jVUHiV03B8eJbZw==",
       "type": "package",
@@ -515,6 +519,8 @@
         "tools/VisualStudioToolsManifest.xml"
       ]
     },
+=======
+>>>>>>> d8274a16d51401b73cceabd01fbb8291b0b520e1
     "Microsoft.CSharp/4.6.0": {
       "sha512": "kxn3M2rnAGy5N5DgcIwcE8QTePWU/XiYcQVzn9HqTls2NKluVzVSmVWRjK7OUPWbljCXuZxHyhEz9kPRIQeXow==",
       "type": "package",
@@ -1414,7 +1420,10 @@
     "net5.0-windows7.0": [
       "EntityFramework >= 6.3.0",
       "EntityFramework6.Npgsql >= 6.3.0",
+<<<<<<< HEAD
       "MaterialDesignThemes >= 4.1.0",
+=======
+>>>>>>> d8274a16d51401b73cceabd01fbb8291b0b520e1
       "Npgsql >= 4.0.10",
       "System.Buffers >= 4.4.0",
       "System.Memory >= 4.5.3",
@@ -1424,11 +1433,17 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\mufcx\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\admin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+>>>>>>> d8274a16d51401b73cceabd01fbb8291b0b520e1
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\mufcx\\source\\repos\\neriousy\\P3Projekt\\Dziennik-Szkolny.csproj",
       "projectName": "Dziennik-Szkolny",
       "projectPath": "C:\\Users\\mufcx\\source\\repos\\neriousy\\P3Projekt\\Dziennik-Szkolny.csproj",
@@ -1437,6 +1452,20 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mufcx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\admin\\source\\repos\\P3Projekt\\Dziennik-Szkolny.csproj",
+      "projectName": "Dziennik-Szkolny",
+      "projectPath": "C:\\Users\\admin\\source\\repos\\P3Projekt\\Dziennik-Szkolny.csproj",
+      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\admin\\source\\repos\\P3Projekt\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> d8274a16d51401b73cceabd01fbb8291b0b520e1
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1470,10 +1499,13 @@
             "target": "Package",
             "version": "[6.3.0, )"
           },
+<<<<<<< HEAD
           "MaterialDesignThemes": {
             "target": "Package",
             "version": "[4.1.0, )"
           },
+=======
+>>>>>>> d8274a16d51401b73cceabd01fbb8291b0b520e1
           "Npgsql": {
             "target": "Package",
             "version": "[4.0.10, )"
@@ -1517,7 +1549,11 @@
             "privateAssets": "none"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+>>>>>>> d8274a16d51401b73cceabd01fbb8291b0b520e1
       }
     }
   }

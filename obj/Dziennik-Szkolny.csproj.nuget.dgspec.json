@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\mufcx\\source\\repos\\neriousy\\P3Projekt\\Dziennik-Szkolny.csproj": {}
   },
   "projects": {
@@ -15,6 +16,26 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mufcx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\admin\\source\\repos\\P3Projekt\\Dziennik-Szkolny.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\admin\\source\\repos\\P3Projekt\\Dziennik-Szkolny.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\admin\\source\\repos\\P3Projekt\\Dziennik-Szkolny.csproj",
+        "projectName": "Dziennik-Szkolny",
+        "projectPath": "C:\\Users\\admin\\source\\repos\\P3Projekt\\Dziennik-Szkolny.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\source\\repos\\P3Projekt\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> d8274a16d51401b73cceabd01fbb8291b0b520e1
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -48,10 +69,13 @@
               "target": "Package",
               "version": "[6.3.0, )"
             },
+<<<<<<< HEAD
             "MaterialDesignThemes": {
               "target": "Package",
               "version": "[4.1.0, )"
             },
+=======
+>>>>>>> d8274a16d51401b73cceabd01fbb8291b0b520e1
             "Npgsql": {
               "target": "Package",
               "version": "[4.0.10, )"
@@ -95,7 +119,11 @@
               "privateAssets": "none"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+>>>>>>> d8274a16d51401b73cceabd01fbb8291b0b520e1
         }
       }
     }

@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+<<<<<<< HEAD
     <Import Project="$(NuGetPackageRoot)materialdesignthemes\4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('$(NuGetPackageRoot)materialdesignthemes\4.1.0\build\MaterialDesignThemes.targets')" />
+=======
+>>>>>>> d8274a16d51401b73cceabd01fbb8291b0b520e1
     <Import Project="$(NuGetPackageRoot)entityframework\6.3.0\buildTransitive\EntityFramework.targets" Condition="Exists('$(NuGetPackageRoot)entityframework\6.3.0\buildTransitive\EntityFramework.targets')" />
   </ImportGroup>
 </Project>

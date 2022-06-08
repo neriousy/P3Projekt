@@ -4,17 +4,30 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\mufcx\source\repos\neriousy\P3Projekt\obj\Debug\net5.0-windows\
+=======
+C:\Users\admin\source\repos\P3Projekt\obj\Debug\net5.0-windows\
+>>>>>>> d8274a16d51401b73cceabd01fbb8291b0b520e1
 Dziennik_Szkolny
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
+<<<<<<< HEAD
 C:\Users\mufcx\source\repos\neriousy\P3Projekt\App.xaml
 21594365281
 
 191606478372
 2001687444042
 MainWindow.xaml;Views\LoginWindow.xaml;
+=======
+C:\Users\admin\source\repos\P3Projekt\App.xaml
+11407045341
+
+5553231288
+198453315901
+MainWindow.xaml;
+>>>>>>> d8274a16d51401b73cceabd01fbb8291b0b520e1
 
 False
 
