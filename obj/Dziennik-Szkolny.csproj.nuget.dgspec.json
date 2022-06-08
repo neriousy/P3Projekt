@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[6.3.0, )"
             },
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
             "Npgsql": {
               "target": "Package",
               "version": "[4.0.10, )"

@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "+4hc2yhQ+i4pplHrFqLmkh60J+t8SLDyQqm8ZwIu329Gm9tkTOn+hE8jt6J6I0KMJ4VINkxSiEce36ufkrX/Cw==",
+  "dgSpecHash": "GfeO2jVsF+O3EY43qeZjkpJaCYz5k59Ttln7oKZqEBs5gDmLPCPohx8R8PqCXOpLugIDemzD6be36dGlYRprMA==",
   "success": true,
   "projectFilePath": "C:\\Users\\mufcx\\source\\repos\\neriousy\\P3Projekt\\Dziennik-Szkolny.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mufcx\\.nuget\\packages\\entityframework\\6.3.0\\entityframework.6.3.0.nupkg.sha512",
     "C:\\Users\\mufcx\\.nuget\\packages\\entityframework6.npgsql\\6.3.0\\entityframework6.npgsql.6.3.0.nupkg.sha512",
+    "C:\\Users\\mufcx\\.nuget\\packages\\materialdesigncolors\\2.0.1\\materialdesigncolors.2.0.1.nupkg.sha512",
+    "C:\\Users\\mufcx\\.nuget\\packages\\materialdesignthemes\\4.1.0\\materialdesignthemes.4.1.0.nupkg.sha512",
     "C:\\Users\\mufcx\\.nuget\\packages\\microsoft.csharp\\4.6.0\\microsoft.csharp.4.6.0.nupkg.sha512",
     "C:\\Users\\mufcx\\.nuget\\packages\\microsoft.netcore.platforms\\3.0.0\\microsoft.netcore.platforms.3.0.0.nupkg.sha512",
     "C:\\Users\\mufcx\\.nuget\\packages\\microsoft.win32.registry\\4.6.0\\microsoft.win32.registry.4.6.0.nupkg.sha512",

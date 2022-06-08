@@ -65,3 +65,8 @@ C:\Users\mufcx\source\repos\neriousy\P3Projekt\obj\Debug\net5.0-windows\refint\D
 C:\Users\mufcx\source\repos\neriousy\P3Projekt\obj\Debug\net5.0-windows\Dziennik-Szkolny.pdb
 C:\Users\mufcx\source\repos\neriousy\P3Projekt\obj\Debug\net5.0-windows\Dziennik-Szkolny.genruntimeconfig.cache
 C:\Users\mufcx\source\repos\neriousy\P3Projekt\obj\Debug\net5.0-windows\ref\Dziennik-Szkolny.dll
+C:\Users\mufcx\source\repos\neriousy\P3Projekt\bin\Debug\net5.0-windows\MaterialDesignColors.dll
+C:\Users\mufcx\source\repos\neriousy\P3Projekt\bin\Debug\net5.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\mufcx\source\repos\neriousy\P3Projekt\obj\Debug\net5.0-windows\Views\LoginWindow.g.cs
+C:\Users\mufcx\source\repos\neriousy\P3Projekt\obj\Debug\net5.0-windows\App.baml
+C:\Users\mufcx\source\repos\neriousy\P3Projekt\obj\Debug\net5.0-windows\Views\LoginWindow.baml
