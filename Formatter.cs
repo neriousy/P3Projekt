@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
-using System.Net.Sockets;
 
-namespace Serwer
+namespace SerializacjaGniazdaAsync
 {
     class Formatter
     {
@@ -37,11 +36,6 @@ namespace Serwer
         public Task<T> DeserializeAsync<T>(Stream s)
         {
             return Task<T>.Factory.StartNew(() => Deserialize<T>(s));
-        }
-
-        internal Task<T> DeserializeAsync<T>(Socket connected)
-        {
-            throw new NotImplementedException();
         }
     }
 }

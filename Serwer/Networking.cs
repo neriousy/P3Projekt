@@ -89,12 +89,13 @@ namespace Serwer
 
                 if(content.IndexOf("<EOF>") > -1)
                 {
-                    Console.WriteLine("Przeczytano {0} bajtow. \nDane: {0}", content.Length, content);
+                    Console.WriteLine("Przeczytano {0} bajtow. \nDane: {1}", content.Length, content);
                 }
                 else
                 {
                     handler.BeginReceive(stan.buffer, 0, ClientState.BufferSize, 0, new AsyncCallback(ReadCallback), stan); // rekurencyjne wywolanie dopoki nie przeczytamy calej wiadomosci
                 }
+                allDone.Set();
             }
 
         }

@@ -34,17 +34,15 @@ namespace Dziennik_Szkolny
                 Socket client = new Socket(AddressFamily.InterNetwork,
                                             SocketType.Stream,
                                             ProtocolType.Tcp);
-                IPHostEntry ipHostInfo = Dns.GetHostEntry("localhost");
-                IPAddress ipAddress = ipHostInfo.AddressList[0];
-                IPEndPoint server = new IPEndPoint(IPAddress.Loopback, port);
+                //IPHostEntry ipHostInfo = Dns.GetHostEntry("10.10.244.165");
+                //IPAddress ipAddress = ipHostInfo.AddressList[0];
+                IPEndPoint server = new IPEndPoint(IPAddress.Parse("localhost"), port);
                 
                 client.BeginConnect(server, new AsyncCallback(ConnectCallback), client);
                 connectDone.WaitOne();
 
-                Send(client, "This is a test<EOF>");
+                Send(client, "This iasdasds a test<EOF>");
                 sendDone.WaitOne();
-
-                
             }
             catch(Exception e)
             {
@@ -118,7 +116,7 @@ namespace Dziennik_Szkolny
 
                 int bytesRead = client.EndReceive(ar);
 
-                if(bytesRead > 0)
+                if (bytesRead > 0)
                 {
                     stan.sb.Append(Encoding.ASCII.GetString(stan.buffer, 0, bytesRead));
 
@@ -126,12 +124,12 @@ namespace Dziennik_Szkolny
                 }
                 else
                 {
-                    if(stan.sb.Length > 1)
+                    if (stan.sb.Length > 1)
                     {
                         response = stan.sb.ToString();
-                    }
+                        receiveDone.Set();
 
-                    receiveDone.Set();
+                    }
                 }
             }
             catch(Exception e)
