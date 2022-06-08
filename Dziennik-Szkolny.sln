@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dziennik-Szkolny", "Dziennik-Szkolny.csproj", "{1EBB22BA-3CDC-430D-B02E-7D1469945F0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dziennik-Szkolny", "Klient\Dziennik-Szkolny.csproj", "{1EBB22BA-3CDC-430D-B02E-7D1469945F0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serwer", "Serwer\Serwer.csproj", "{9B542838-3744-4FAE-97A2-54F1368DDCCD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1EBB22BA-3CDC-430D-B02E-7D1469945F0F} = {1EBB22BA-3CDC-430D-B02E-7D1469945F0F}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{1EBB22BA-3CDC-430D-B02E-7D1469945F0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EBB22BA-3CDC-430D-B02E-7D1469945F0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EBB22BA-3CDC-430D-B02E-7D1469945F0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B542838-3744-4FAE-97A2-54F1368DDCCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B542838-3744-4FAE-97A2-54F1368DDCCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B542838-3744-4FAE-97A2-54F1368DDCCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B542838-3744-4FAE-97A2-54F1368DDCCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
