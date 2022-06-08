@@ -25,16 +25,8 @@ namespace Dziennik_Szkolny
         public MainWindow()
         {
             InitializeComponent();
-            using (var context = new MyContext())
-            {
-                var studenci = context.Klasy.ToArray();
-                var studenci1 = context.Studenci.ToArray();
-                var Ocenki = context.Oceny.ToArray();
-                var ilosc = studenci[studenci1[20].class_id].Uzytkownicy.Count;
-                //Test.Text = ilosc.ToString();
-            }
+            
         }
-
         private void exitButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
