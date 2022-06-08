@@ -34,9 +34,9 @@ namespace Dziennik_Szkolny
                 Socket client = new Socket(AddressFamily.InterNetwork,
                                             SocketType.Stream,
                                             ProtocolType.Tcp);
-                IPHostEntry ipHostInfo = Dns.GetHostEntry("localhost");
-                IPAddress ipAddress = ipHostInfo.AddressList[0];
-                IPEndPoint server = new IPEndPoint(IPAddress.Loopback, port);
+                //IPHostEntry ipHostInfo = Dns.GetHostEntry("10.10.244.165");
+                //IPAddress ipAddress = ipHostInfo.AddressList[0];
+                IPEndPoint server = new IPEndPoint(IPAddress.Parse("localhost"), port);
                 
                 client.BeginConnect(server, new AsyncCallback(ConnectCallback), client);
                 connectDone.WaitOne();
