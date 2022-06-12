@@ -11,7 +11,7 @@ namespace Serwer
         [Key]
         [Required]
         [Index(IsUnique = true)]
-        public int subject_id { get; set; }
+        public Guid subject_id { get; set; }
         public string subjectname { get; set; }
 
         [ForeignKey("subject_id")]

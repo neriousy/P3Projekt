@@ -5,13 +5,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Serwer
 {
-    [Table("parents")]
+    [Table("parents", Schema="public")]
     public class Parents
     {
         [Key]
         [Required]
         [Index(IsUnique = true)]
-        public int parent_id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid parent_id { get; set; }
 
         [MinLength(2), MaxLength(20)]
         public string name { get; set; }
@@ -23,7 +24,7 @@ namespace Serwer
 
         [ForeignKey("parent_id")]
 
-        public ICollection<Parent_user> Rodzice_ucznia { get; set; }
+        public ICollection<Parents_students> Rodzice_ucznia { get; set; }
 
 
         [NotMapped]

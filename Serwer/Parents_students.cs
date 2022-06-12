@@ -4,14 +4,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Serwer
 {
-    [Table("parent_user")]
-    public class Parent_user
+    [Table("parents_students", Schema="public")]
+    public class Parents_students
     {
         [Key]
-        public int student_id { get; set; }
+        public Guid student_id { get; set; }
         public Students Users { get; set; }
         [Key]
-        public int parent_id { get; set; }
+        public Guid parent_id { get; set; }
         public Parents Parents { get; set; }
 
 

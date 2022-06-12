@@ -5,18 +5,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Serwer
 {
 
-    [Table("lessons")]
+    [Table("lessons", Schema="public")]
     public class Lessons
     {
         [Key]
         [Required]
         [Index(IsUnique = true)]
-        public int lesson_id { get; set; }
-        public int subject_id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid lesson_id { get; set; }
+        public Guid subject_id { get; set; }
         public Subjects Subjects { get; set; }
-        public int class_id { get; set; }
+        public Guid class_id { get; set; }
         public Classes Classes{ get; set; }
-        public int teacher_id { get; set; }
+        public Guid teacher_id { get; set; }
         public Teachers Teachers { get; set; }
         public DateTime start_time { get; set; }
 

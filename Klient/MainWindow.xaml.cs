@@ -27,21 +27,21 @@ namespace Dziennik_Szkolny
             InitializeComponent();
             
         }
-        private void exitButton_Click(object sender, RoutedEventArgs e)
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-        private void hideMenuButton_Click(object sender, RoutedEventArgs e)
+        private void HideMenuButton_Click(object sender, RoutedEventArgs e)
         {
-            hideMenuButton.Visibility = Visibility.Collapsed;
-            showMenuButton.Visibility = Visibility.Visible;
+            HideMenuButton.Visibility = Visibility.Collapsed;
+            ShowMenuButton.Visibility = Visibility.Visible;
         }
 
-        private void showMenuButton_Click(object sender, RoutedEventArgs e)
+        private void ShowMenuButton_Click(object sender, RoutedEventArgs e)
         {
-            hideMenuButton.Visibility = Visibility.Visible;
-            showMenuButton.Visibility = Visibility.Collapsed;
+            HideMenuButton.Visibility = Visibility.Visible;
+            ShowMenuButton.Visibility = Visibility.Collapsed;
         }
     }
 }

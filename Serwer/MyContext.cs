@@ -15,7 +15,7 @@ namespace Serwer
         public DbSet<Classes> Klasy { get; set; }
         public DbSet<Grades> Oceny { get; set; }
         public DbSet<Lessons> Lekcje { get; set; }
-        public DbSet<Parent_user> Rodzice_ucznia { get; set; }
+        public DbSet<Parents_students> Rodzice_ucznia { get; set; }
         public DbSet<Subjects> Przedmioty { get; set; }
         public DbSet<Warnings> Uwagi { get; set; }
         public DbSet<Parents> Rodzice { get; set; }
@@ -26,7 +26,7 @@ namespace Serwer
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.HasDefaultSchema("public");
-            modelBuilder.Entity<Parent_user>().HasKey(o => new { o.student_id, o.parent_id });
+            modelBuilder.Entity<Parents_students>().HasKey(o => new { o.student_id, o.parent_id });
             base.OnModelCreating(modelBuilder);
         }
     }

@@ -5,13 +5,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Serwer
 {
-    [Table("teachers")]
+    [Table("teachers", Schema="public")]
     public class Teachers
     {
         [Key]
         [Required]
         [Index(IsUnique = true)]
-        public int teacher_id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid teacher_id { get; set; }
 
         [MinLength(2), MaxLength(20)]
         public string name { get; set; }
