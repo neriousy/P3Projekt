@@ -16,6 +16,7 @@ namespace Serwer
         public Guid student_id { get; set; }
 
         [MinLength(2), MaxLength(20)]
+        [Display(Name = "Imię")]
         public string name { get; set; }
 
         [MinLength(2), MaxLength(40)]
