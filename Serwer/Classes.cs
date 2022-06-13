@@ -14,7 +14,7 @@ namespace Serwer
         [Index(IsUnique = true)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid class_id { get; set; }
-        public string startyear { get; set; }
+        public int startyear { get; set; }
         public string course { get; set; }
 
         [ForeignKey("class_id")]
