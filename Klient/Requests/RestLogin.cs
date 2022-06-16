@@ -42,6 +42,7 @@ namespace Dziennik_Szkolny
                         }
                     }
                 }
+                /// Wprowadzono niepoprawne dane do logowania
                 else
                 {
                     message = "Niepoprawne dane logowania";
