@@ -1,0 +1,65 @@
+﻿<Window x:Class="Dziennik_Szkolny.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Dziennik_Szkolny"
+        mc:Ignorable="d"
+        Title="Login" Height="656" Width="420"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{x:Null}"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen">
+    <materialDesign:Card
+        UniformCornerRadius="23"
+        Background="{DynamicResource MaterialDesignPaper}"
+        Margin="23">
+        <materialDesign:DialogHost
+            CloseOnClickAway="True"
+            x:Name="dialogHost">
+            <StackPanel Margin="0,0,0,-79">
+                <materialDesign:PopupBox
+                    HorizontalAlignment="Right"
+                    Margin="0 23 23 0"
+                    PlacementMode="BottomAndAlignRightEdges"
+                    StaysOpen="False"
+                    Height="23">
+                    <StackPanel Margin="15 10 0 5"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                        <TextBlock VerticalAlignment="Center" Text="Tryb ciemny"></TextBlock>
+                        <ToggleButton Cursor="Hand"
+                                      Margin="10 0 5 0"
+                                      x:Name="themeToggle"
+                                      IsChecked="{Binding IsDarkTheme}"
+                                      Click="changeTheme">
+                        </ToggleButton>
+                        <Button x:Name="exitButton"
+                                ToolTip="Wyjdź"
+                                Content="Wyjdź z aplikacji"
+                                Click="exitApp">
+
+                        </Button>
+                    </StackPanel>
+                </materialDesign:PopupBox>
+                <Image Margin="0 60 0 5"
+                       Source="logo.jpg"
+                       Height="99">
+                </Image>
+                <TextBlock Margin="0 23 0 7"
+                           HorizontalAlignment="Center"
+                           FontSize="27" FontWeight="Bold"
+                           Text="Witaj"/>
+                <TextBlock FontSize="13" FontWeight="SemiBold" HorizontalAlignment="Center" Text="Zaloguj się"/>
+                <TextBox Margin="0 60 0 0" x:Name="userInputtedUsername" Width="300" FontSize="17" BorderThickness="3"
+                         BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+                <PasswordBox Margin="0 17 0 0" x:Name="userInputtedPassword" Width="300" FontSize="17" BorderThickness="2"
+                             BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
+                <Button Margin="0 17 0 0" x:Name="loginButton" Style="{StaticResource MaterialDesignFlatButton}" Height="60" Width="300" materialDesign:ButtonAssist.CornerRadius="7"
+                        FontSize="17" Content="Zaloguj" Click="loginButton_Click"/>
+            </StackPanel>
+        </materialDesign:DialogHost>
+    </materialDesign:Card>
+</Window>
