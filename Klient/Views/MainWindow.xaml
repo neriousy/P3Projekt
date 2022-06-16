@@ -37,12 +37,12 @@
             <TextBlock Text="Dziennik Szkolny"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="27"></TextBlock>
 
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="User:imie User:nazwisko" VerticalAlignment="Center" FontSize="17" Foreground="White" ></TextBlock>
+                <TextBlock x:Name="dataOfUser" Text="User:imie User:nazwisko" VerticalAlignment="Center" FontSize="17" Foreground="White" ></TextBlock>
 
                 <materialDesign:PopupBox  Margin="7" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" >
                     <StackPanel Width="300">
                         <Button x:Name="helpButton" Content="Pomoc"/>
-                        <Button x:Name="logoutButton" Content="Wyloguj"/>
+                        <Button x:Name="logoutButton" Content="Wyloguj" Click="logoutButton_Click"/>
                         <Separator/>
                         <Button x:Name="exitButton" Content="Wyjdź z aplikacji" Click="exitButton_Click"/>
                     </StackPanel>

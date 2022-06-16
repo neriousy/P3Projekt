@@ -59,6 +59,7 @@
                              BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
                 <Button Margin="0 17 0 0" x:Name="loginButton" Style="{StaticResource MaterialDesignFlatButton}" Height="60" Width="300" materialDesign:ButtonAssist.CornerRadius="7"
                         FontSize="17" Content="Zaloguj" Click="loginButton_Click"/>
+                <CheckBox Content="CheckBox"/>
             </StackPanel>
         </materialDesign:DialogHost>
     </materialDesign:Card>

@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System.Text.Json;
+using System.Windows;
 using System.Windows.Input;
+using ApiREST;
 using MaterialDesignThemes.Wpf;
 
 
@@ -35,17 +37,22 @@ namespace Dziennik_Szkolny
 
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
-            
+            if(e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
         }
 
 
-        private void loginButton_Click(object sender, RoutedEventArgs e)
+        private async void loginButton_Click(object sender, RoutedEventArgs e)
         {
             
             RestLogin client = new RestLogin();
-            if(client.makeRequest(userInputtedUsername.Text, userInputtedPassword.Password.ToString()).ToString() != "-1")
+            string result = await client.makeRequestLogin(userInputtedUsername.Text, userInputtedPassword.Password.ToString());
+            if (result != "-1")
             {
                 MainWindow mainWindow = new MainWindow();
+                mainWindow.start(result);
                 this.Hide();
                 mainWindow.Show();
             }

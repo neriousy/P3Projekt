@@ -3,23 +3,25 @@ using System.Text;
 using System.Net;
 using System.IO;
 using System.Windows.Forms;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace Dziennik_Szkolny
 {
     class RestLogin
     {
         /// <summary>
-        /// Sprawdzenienie wprowadzoncyh dancyh do logowania
+        /// Sprawdzeni
         /// </summary>
         /// <param name="login">email</param>
         /// <param name="haslo">password</param>
         /// <returns>W przypadku powodzenia : Struktura danych użytkownika
         ///          W przypadku niepowodzenia : -1</returns>
-        public string makeRequestLogin(string login, string haslo)
+        public async Task<string> makeRequestLogin(string login, string haslo)
         {
             string message;
             string caption = "Error";
-            string strResponseValue = string.Empty;
+            var strResponseValue = string.Empty;
             string url = "https://localhost:44307/api/Students/PostGetStudent";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             var postData = "email=" + Uri.EscapeDataString(login);
@@ -32,19 +34,20 @@ namespace Dziennik_Szkolny
 
             try
             {
-                using (var stream = request.GetRequestStream())
+                using (var stream = await request.GetRequestStreamAsync())
                 {
                     stream.Write(data, 0, data.Length);
                 }
-                response = (HttpWebResponse)request.GetResponse();
+                response = (HttpWebResponse)(await request.GetResponseAsync());
 
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
+
                     using (Stream responseStream = response.GetResponseStream())
                     {
                         using (StreamReader reader = new StreamReader(responseStream))
                         {
-                            strResponseValue = reader.ReadToEnd();
+                            strResponseValue = await reader.ReadToEndAsync();
                         }
                     }
                 }
@@ -69,7 +72,6 @@ namespace Dziennik_Szkolny
                     ((IDisposable)response).Dispose();
                 }
             }
-
             return strResponseValue;
         }
     }

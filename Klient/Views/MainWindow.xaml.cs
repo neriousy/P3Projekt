@@ -14,6 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
 using MaterialDesignThemes;
+using ApiREST;
+using System.Text.Json;
+using System.IO;
 
 namespace Dziennik_Szkolny
 {
@@ -25,7 +28,6 @@ namespace Dziennik_Szkolny
         public MainWindow()
         {
             InitializeComponent();
-            
         }
         private void exitButton_Click(object sender, RoutedEventArgs e)
         {
@@ -42,6 +44,27 @@ namespace Dziennik_Szkolny
         {
             hideMenuButton.Visibility = Visibility.Visible;
             showMenuButton.Visibility = Visibility.Collapsed;
+        }
+
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
+
+        private void logoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow login = new LoginWindow();
+            this.Hide();
+            login.Show();
+        }
+
+        public void start(string data)
+        {
+            Students? stud =  JsonSerializer.Deserialize<Students?>(data);
+            dataOfUser.Text = $"{stud?.Dane}";
         }
     }
 }
