@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime;
 
-namespace Serwer
+
+namespace ApiREST
 {
-    [Table("students", Schema="public")]
+    [Table("students")]
     public class Students
     {
 
@@ -16,7 +18,6 @@ namespace Serwer
         public Guid student_id { get; set; }
 
         [MinLength(2), MaxLength(20)]
-        [Display(Name = "Imię")]
         public string name { get; set; }
 
         [MinLength(2), MaxLength(40)]
@@ -27,11 +28,12 @@ namespace Serwer
         public Guid class_id { get; set; }
         public Classes Classes { get; set; }
 
-        [ForeignKey("student_id")]
         public ICollection<Attendance> Obecnosci { get; set; }
-        public ICollection<Grades> Oceny { get; set; }
+        [ForeignKey("student_id")]
+        public ICollection<Grades> Grades { get; set; }
         public ICollection<Warnings> Uwagi { get; set; }
-        public ICollection<Parents_students> Rodzice_ucznia { get; set; }
+        [ForeignKey("student_id")]
+        public ICollection<Parents_students> Parents_students { get; set; }
 
         [NotMapped]
         public string Dane

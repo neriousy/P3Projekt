@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Serwer
+namespace ApiREST
 {
     [Table("subjects")]
     public class Subjects
@@ -11,6 +11,7 @@ namespace Serwer
         [Key]
         [Required]
         [Index(IsUnique = true)]
+
         public Guid subject_id { get; set; }
         public string subjectname { get; set; }
 

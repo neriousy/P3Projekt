@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Serwer
+namespace ApiREST
 {
-    [Table("classes", Schema="public")]
+    [Table("classes")]
     public class Classes
     {
 
@@ -13,8 +13,9 @@ namespace Serwer
         [Required]
         [Index(IsUnique = true)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         public Guid class_id { get; set; }
-        public int startyear { get; set; }
+        public string startyear { get; set; }
         public string course { get; set; }
 
         [ForeignKey("class_id")]

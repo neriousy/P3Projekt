@@ -7,7 +7,7 @@ using Npgsql;
 using System.Data.Entity;
 
 
-namespace Serwer
+namespace ApiREST
 {
     class NpgSqlConfiguration : DbConfiguration
     {

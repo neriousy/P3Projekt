@@ -2,9 +2,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Serwer
+namespace ApiREST
 {
-    [Table("attendance", Schema="public")]
+    [Table("attendance")]
     public class Attendance
     {
         [Key]
@@ -15,10 +15,8 @@ namespace Serwer
         public DateTime date { get; set; }
         public string attendance { get; set; }
         public string islate { get; set; }
-
         public Guid student_id { get; set; }
         public Students Users { get; set; }
-
         public Guid lesson_id { get; set; }
         public Lessons Lessons { get; set; }
 

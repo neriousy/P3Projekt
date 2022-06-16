@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace Serwer
+namespace ApiREST
 {
 
-    [Table("lessons", Schema="public")]
+    [Table("lessons")]
     public class Lessons
     {
         [Key]

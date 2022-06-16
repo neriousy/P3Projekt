@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,7 +36,7 @@ namespace Dziennik_Szkolny
                                             ProtocolType.Tcp);
                 //IPHostEntry ipHostInfo = Dns.GetHostEntry("10.10.244.165");
                 //IPAddress ipAddress = ipHostInfo.AddressList[0];
-                IPEndPoint server = new IPEndPoint(IPAddress.Parse("localhost"), port);
+                IPEndPoint server = new IPEndPoint(IPAddress.Parse("127.0.0.1"), port);
                 
                 client.BeginConnect(server, new AsyncCallback(ConnectCallback), client);
                 connectDone.WaitOne();
@@ -141,3 +141,4 @@ namespace Dziennik_Szkolny
 
     }
 }
+*/

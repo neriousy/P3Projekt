@@ -17,7 +17,7 @@ namespace Dziennik_Szkolny
     {
         void App_Startup(object sender, StartupEventArgs e)
         {
-            Connector.StartClient();
+            //Connector.StartClient();
         }
     }
 }

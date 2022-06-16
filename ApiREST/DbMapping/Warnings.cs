@@ -2,9 +2,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Serwer
+namespace ApiREST
 {
-    [Table("waranings", Schema="public")]
+    [Table("warnings")]
     public class Warnings
     {
         [Key]

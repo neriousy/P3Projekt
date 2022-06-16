@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Serwer
+namespace ApiREST
 {
-    [Table("teachers", Schema="public")]
+    [Table("teachers")]
     public class Teachers
     {
         [Key]
@@ -23,15 +23,11 @@ namespace Serwer
         public string passwd { get; set; }
 
         [ForeignKey("teacher_id")]
-        public ICollection<Lessons> Lekcje { get; set; }
-
+        public ICollection<Lessons> Lessons { get; set; }
         [ForeignKey("teacher_id")]
-
-        public ICollection<Grades> Oceny { get; set; }
-
+        public ICollection<Grades> Grades { get; set; }
         [ForeignKey("teacher_id")]
-
-        public ICollection<Warnings> Uwagi { get; set; }
+        public ICollection<Warnings> Warnings { get; set; }
 
         [NotMapped]
         public string Dane
