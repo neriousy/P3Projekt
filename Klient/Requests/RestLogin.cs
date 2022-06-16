@@ -8,8 +8,14 @@ namespace Dziennik_Szkolny
 {
     class RestLogin
     {
-
-        public string makeRequest(string login, string haslo)
+        /// <summary>
+        /// Sprawdzenienie wprowadzoncyh dancyh do logowania
+        /// </summary>
+        /// <param name="login">email</param>
+        /// <param name="haslo">password</param>
+        /// <returns>W przypadku powodzenia : Struktura danych użytkownika
+        ///          W przypadku niepowodzenia : -1</returns>
+        public string makeRequestLogin(string login, string haslo)
         {
             string message;
             string caption = "Error";
