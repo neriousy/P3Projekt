@@ -38,7 +38,6 @@ namespace ApiREST
             services.AddScoped<IParentsRepository<Parents>, ParentsRepository>();
             services.AddSwaggerGen(c =>
             { 
-                
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiREST", Version = "v1" });
             });
             services.AddDbContext<MyContext>(op => op.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
