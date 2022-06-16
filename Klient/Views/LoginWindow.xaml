@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Dziennik_Szkolny"
         mc:Ignorable="d"
-        Title="Login" Height="666" Width="420"
+        Title="Login" Height="656" Width="420"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{x:Null}"
         AllowsTransparency="True"
@@ -19,7 +19,7 @@
         <materialDesign:DialogHost
             CloseOnClickAway="True"
             x:Name="dialogHost">
-            <StackPanel>
+            <StackPanel Margin="0,0,0,-79">
                 <materialDesign:PopupBox
                     HorizontalAlignment="Right"
                     Margin="0 23 23 0"
@@ -58,7 +58,7 @@
                 <PasswordBox Margin="0 17 0 0" x:Name="userInputtedPassword" Width="300" FontSize="17" BorderThickness="2"
                              BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
                 <Button Margin="0 17 0 0" x:Name="loginButton" Style="{StaticResource MaterialDesignFlatButton}" Height="60" Width="300" materialDesign:ButtonAssist.CornerRadius="7"
-                        FontSize="17" Content="Zaloguj"/>
+                        FontSize="17" Content="Zaloguj" Click="loginButton_Click"/>
             </StackPanel>
         </materialDesign:DialogHost>
     </materialDesign:Card>

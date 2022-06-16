@@ -5,13 +5,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ApiREST
 {
-    [Table("parents")]
-    public class Parents
+    [Table("teachers")]
+    public class Teachers
     {
         [Key]
         [Required]
         [Index(IsUnique = true)]
-        public Guid parent_id { get; set; }
+        public Guid teacher_id { get; set; }
 
         [MinLength(2), MaxLength(20)]
         public string name { get; set; }
@@ -21,9 +21,16 @@ namespace ApiREST
         public string email { get; set; }
         public string passwd { get; set; }
 
-        [ForeignKey("parent_id")]
-        public ICollection<Parents_students> Parents_students { get; set; }
+        [ForeignKey("teacher_id")]
+        public ICollection<Lessons> Lekcje { get; set; }
 
+        [ForeignKey("teacher_id")]
+
+        public ICollection<Grades> Oceny { get; set; }
+
+        [ForeignKey("teacher_id")]
+
+        public ICollection<Warnings> Uwagi { get; set; }
 
         [NotMapped]
         public string Dane

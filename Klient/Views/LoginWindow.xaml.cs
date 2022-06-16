@@ -1,22 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Diagnostics;
 using MaterialDesignThemes.Wpf;
-using System.IO;
-using System.Net;
-using System.Net.Sockets;
+
+
 namespace Dziennik_Szkolny
 {
     public partial class LoginWindow : Window
@@ -52,40 +38,20 @@ namespace Dziennik_Szkolny
             
         }
 
-        async private void loginButton_Click(object sender, RoutedEventArgs e)
-        {            
-        /*    Socket clientSocket = new Socket(
-                AddressFamily.InterNetwork,
-                SocketType.Stream,
-                ProtocolType.Tcp);
-            EndPoint serverAddress = new IPEndPoint(IPAddress.Loopback, 7777);
-            await Task.Factory.StartNew(() => clientSocket.Connect(serverAddress));
-            NetworkStream strumienPolaczenia = new NetworkStream(clientSocket);
-            StreamWriter strumienZapisu = new StreamWriter(strumienPolaczenia);
-            StreamReader strumienOdczytu = new StreamReader(strumienPolaczenia);
-            (string, string) wiadomoscWys = (userInputtedUsername.Text, userInputtedPassword.Password.ToString());
-            await Task.Factory.StartNew(() => { strumienZapisu.WriteLine(wiadomoscWys); });
-            await Task.Factory.StartNew(strumienZapisu.Flush);
-            (int, char) wiadomoscOdb = await Task<(int, char)>.Factory.StartNew(strumienOdczytu.ReadLine);
-            strumienZapisu.Close();
-            strumienOdczytu.Close();
-            strumienPolaczenia.Close();
-            clientSocket.Close();
 
-            if(wiadomoscOdb.Item1 != -1)
+        private void loginButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+            RestLogin client = new RestLogin();
+            if(client.makeRequest(userInputtedUsername.Text, userInputtedPassword.Password.ToString()).ToString() != "-1")
             {
-                MainWindow main = new MainWindow();
-                App.Current.MainWindow = main;
+                MainWindow mainWindow = new MainWindow();
                 this.Hide();
-                main.Show();
+                mainWindow.Show();
             }
-            else
-            {
-                string message = "Wprowadzono niepoprawne dane, sprobuj ponownie!";
-                string title = "Blad";
-                MessageBoxButton button = MessageBoxButton.OK;
-                MessageBox.Show(message, title, button);
-            }*/
+            
+            
         }
+
     }
 }

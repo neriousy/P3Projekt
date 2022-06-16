@@ -12,11 +12,6 @@ namespace ApiREST
         [Key]
         [Required]
         [Index(IsUnique = true)]
-<<<<<<<< HEAD:ApiREST/DbMapping/DbMapping/Classes.cs
-========
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-
->>>>>>>> 85f433c326d4d751bdc8a41be75b3ce4c943006e:ApiREST/DbMapping/Classes.cs
         public Guid class_id { get; set; }
         public string startyear { get; set; }
         public string course { get; set; }

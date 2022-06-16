@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dziennik-Szkolny", "Klient\Dziennik-Szkolny.csproj", "{1EBB22BA-3CDC-430D-B02E-7D1469945F0F}"
 EndProject
+<<<<<<< HEAD
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serwer", "Serwer\ApiREST.csproj", "{9B542838-3744-4FAE-97A2-54F1368DDCCD}"
+=======
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiREST", "ApiREST\ApiREST.csproj", "{F1F53F9D-A978-4342-B31C-4B924D08E230}"
+>>>>>>> 85f433c326d4d751bdc8a41be75b3ce4c943006e
 	ProjectSection(ProjectDependencies) = postProject
 		{1EBB22BA-3CDC-430D-B02E-7D1469945F0F} = {1EBB22BA-3CDC-430D-B02E-7D1469945F0F}
 	EndProjectSection
