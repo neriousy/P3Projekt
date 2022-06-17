@@ -14,7 +14,6 @@ namespace Dziennik_Szkolny
         public Guid Subject_id { get; set; }
         public string Subjectname { get; set; }
 
-        [ForeignKey("subject_id")]
         public ICollection<Lessons> Lessons { get; set; }
         public ICollection<Grades> Grades { get; set; }
 

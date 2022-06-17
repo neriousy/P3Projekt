@@ -28,6 +28,8 @@ namespace ApiREST
         public ICollection<Grades> Grades { get; set; }
         [ForeignKey("Teacher_id")]
         public ICollection<Warnings> Warnings { get; set; }
+        [ForeignKey("Teacher_id")]
+        public ICollection<Lesson_plan> Lesson_plan { get; set; }
 
         [NotMapped]
         public string Dane
