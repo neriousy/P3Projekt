@@ -22,7 +22,7 @@ namespace ApiREST
         public string Email { get; set; }
         public string Passwd { get; set; }
 
-        [ForeignKey("parent_id")]
+        [ForeignKey("Parent_id")]
         public ICollection<Parents_students> Parents_students { get; set; }
 
 

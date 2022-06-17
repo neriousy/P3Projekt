@@ -21,7 +21,7 @@ namespace ApiREST
         public Teachers Teachers { get; set; }
         public DateTime Start_time { get; set; }
 
-        [ForeignKey("lesson_id")]
+        [ForeignKey("Lesson_id")]
         public ICollection<Attendance> Attendances { get; set; }
 
     }

@@ -29,10 +29,10 @@ namespace ApiREST
         public Classes Classes { get; set; }
 
         public ICollection<Attendance> Attendances { get; set; }
-        [ForeignKey("student_id")]
+        [ForeignKey("Student_id")]
         public ICollection<Grades> Grades { get; set; }
         public ICollection<Warnings> Warnings { get; set; }
-        [ForeignKey("student_id")]
+        [ForeignKey("Student_id")]
         public ICollection<Parents_students> Parents_students { get; set; }
 
         [NotMapped]

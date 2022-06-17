@@ -16,7 +16,7 @@ namespace ApiREST
         public string StartYear { get; set; }
         public string Course { get; set; }
 
-        [ForeignKey("class_id")]
+        [ForeignKey("Class_id")]
         public ICollection<Students> Students { get; set; }
         public ICollection<Lessons> Lessons { get; set; }
 

@@ -22,11 +22,11 @@ namespace ApiREST
         public string Email { get; set; }
         public string Passwd { get; set; }
 
-        [ForeignKey("teacher_id")]
+        [ForeignKey("Teacher_id")]
         public ICollection<Lessons> Lessons { get; set; }
-        [ForeignKey("teacher_id")]
+        [ForeignKey("Teacher_id")]
         public ICollection<Grades> Grades { get; set; }
-        [ForeignKey("teacher_id")]
+        [ForeignKey("Teacher_id")]
         public ICollection<Warnings> Warnings { get; set; }
 
         [NotMapped]
