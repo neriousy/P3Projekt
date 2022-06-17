@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ApiREST
+namespace Dziennik_Szkolny
 {
     [Table("parents_students")]
     public class Parents_students

@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MainWindow" Height="777" Width="1234" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Foreground="White">
-    
+
     <Window.Resources>
         <Storyboard x:Key="showMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="sideMenu">
@@ -31,7 +31,7 @@
             <BeginStoryboard Storyboard="{StaticResource hideMenu}"></BeginStoryboard>
         </EventTrigger>
     </Window.Triggers>
-    
+
     <Grid Background="Azure">
         <Grid Height="60" VerticalAlignment="Top" Background="CadetBlue" >
             <TextBlock Text="Dziennik Szkolny"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="27"></TextBlock>
@@ -49,7 +49,7 @@
                 </materialDesign:PopupBox>
 
             </StackPanel>
-            </Grid>
+        </Grid>
         <Grid x:Name="sideMenu" Width="69" HorizontalAlignment="Left" Background="DarkSlateGray">
             <StackPanel>
                 <Grid Height="200" Background="White">
@@ -90,5 +90,6 @@
                 </ListView>
             </StackPanel>
         </Grid>
+        <TextBlock x:Name="body" HorizontalAlignment="Center" Margin="0,107,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="614" Width="1048" IsEnabled="False" Foreground="Black"/>
     </Grid>
 </Window>

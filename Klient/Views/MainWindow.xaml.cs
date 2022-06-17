@@ -14,9 +14,12 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
 using MaterialDesignThemes;
-using ApiREST;
+
 using System.Text.Json;
 using System.IO;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace Dziennik_Szkolny
 {
@@ -25,6 +28,7 @@ namespace Dziennik_Szkolny
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Students? stud;
         public MainWindow()
         {
             InitializeComponent();
@@ -63,8 +67,19 @@ namespace Dziennik_Szkolny
 
         public void start(string data)
         {
-            Students? stud =  JsonSerializer.Deserialize<Students?>(data);
+            stud =  JsonSerializer.Deserialize<Students?>(data);
+            var jgrades = JObject.Parse(data);
+            ICollection<Grades> oceny = JsonConvert.DeserializeObject<ICollection<Grades>>(jgrades["grades"].ToString());
             dataOfUser.Text = $"{stud?.Dane}";
+            body.Text = oceny.Count.ToString();
+            foreach(Grades o in oceny)
+            {
+                if(o.teacher_id != o.student_id)
+                {
+                    body.Text += o.teacher_id + " " + o.student_id + " ";
+                }
+                
+            }
         }
     }
 }

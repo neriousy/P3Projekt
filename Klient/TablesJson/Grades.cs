@@ -2,14 +2,10 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ApiREST
-{
-    [Table("grades")]
+namespace Dziennik_Szkolny
+{ 
     public class Grades
     {
-        [Key]
-        [Required]
-        [Index(IsUnique = true)]
         public Guid grade_id { get; set; }
         public string grade { get; set; }
         public int weight { get; set; }
@@ -19,7 +15,6 @@ namespace ApiREST
         public Students Student{ get; set; }
         public Guid teacher_id { get; set; }
         public Teachers Teachers { get; set; }
-        [ForeignKey("Subjects")]
         public Guid subject_id { get; set; }
         public Subjects Subjects { get; set; }
 
@@ -27,7 +22,7 @@ namespace ApiREST
         {
             get
             {
-                return "Ocena: " + grade + " Waga:" + weight.ToString();  
+                return "Ocena: " + grade + " Waga:" + student_id.ToString();  
             }
         }
 

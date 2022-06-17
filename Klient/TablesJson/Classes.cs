@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ApiREST
+namespace Dziennik_Szkolny
 {
     [Table("classes")]
     public class Classes
