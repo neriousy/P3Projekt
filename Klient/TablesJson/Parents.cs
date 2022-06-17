@@ -5,21 +5,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dziennik_Szkolny
 {
-    [Table("parents")]
     public class Parents
     {
         [Key]
         [Required]
         [Index(IsUnique = true)]
-        public Guid parent_id { get; set; }
+        public Guid Parent_id { get; set; }
 
         [MinLength(2), MaxLength(20)]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [MinLength(2), MaxLength(40)]
-        public string surname { get; set; }
-        public string email { get; set; }
-        public string passwd { get; set; }
+        public string Surname { get; set; }
+        public string Email { get; set; }
+        public string Passwd { get; set; }
 
         [ForeignKey("parent_id")]
         public ICollection<Parents_students> Parents_students { get; set; }
@@ -30,7 +29,7 @@ namespace Dziennik_Szkolny
         {
             get
             {
-                return name + " " + surname;
+                return Name + " " + Surname;
             }
         }
 

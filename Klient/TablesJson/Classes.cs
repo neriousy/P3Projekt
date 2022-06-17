@@ -5,27 +5,25 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dziennik_Szkolny
 {
-    [Table("classes")]
     public class Classes
     {
-
         [Key]
         [Required]
         [Index(IsUnique = true)]
-        public Guid class_id { get; set; }
-        public string startyear { get; set; }
-        public string course { get; set; }
+        public Guid Class_id { get; set; }
+        public string StartYear { get; set; }
+        public string Course { get; set; }
 
         [ForeignKey("class_id")]
-        public ICollection<Students> Uzytkownicy { get; set; }
-        public ICollection<Lessons> Lekcje { get; set; }
+        public ICollection<Students> Students { get; set; }
+        public ICollection<Lessons> Lessons { get; set; }
 
         [NotMapped]
         public string Opis
         {
             get
             {
-                return class_id + " " + startyear + " " + course;
+                return Class_id + " " + StartYear + " " + Course;
             }
         }
 

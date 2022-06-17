@@ -16,7 +16,7 @@ namespace ApiREST
 
         public ICollection<Grades> GetGrades(Guid uuid)
         {
-            Students student = _myContext.Students.FirstOrDefault(s => s.student_id == uuid);
+            Students student = _myContext.Students.FirstOrDefault(s => s.Student_id == uuid);
             return student?.Grades.ToList();
         }
             

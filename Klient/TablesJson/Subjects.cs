@@ -11,12 +11,12 @@ namespace Dziennik_Szkolny
         [Key]
         [Required]
         [Index(IsUnique = true)]
-        public Guid subject_id { get; set; }
-        public string subjectname { get; set; }
+        public Guid Subject_id { get; set; }
+        public string Subjectname { get; set; }
 
         [ForeignKey("subject_id")]
-        public ICollection<Lessons> Lekcje { get; set; }
-        public ICollection<Grades> Oceny { get; set; }
+        public ICollection<Lessons> Lessons { get; set; }
+        public ICollection<Grades> Grades { get; set; }
 
     }
 }

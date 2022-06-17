@@ -5,19 +5,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ApiREST
 {
-    [Table("subjects")]
+    [Table("Subjects")]
     public class Subjects
     {
         [Key]
         [Required]
         [Index(IsUnique = true)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid subject_id { get; set; }
-        public string subjectname { get; set; }
+        public Guid Subject_id { get; set; }
+        public string Subjectname { get; set; }
 
         [ForeignKey("subject_id")]
-        public ICollection<Lessons> Lekcje { get; set; }
-        public ICollection<Grades> Oceny { get; set; }
+        public ICollection<Lessons> Lessons { get; set; }
+        public ICollection<Grades> Grades { get; set; }
 
     }
 }

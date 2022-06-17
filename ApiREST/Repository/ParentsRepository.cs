@@ -20,7 +20,7 @@ namespace ApiREST
         }
         public Task<Parents> GetParentAsync(string email, string password)
         {
-            return _myContext.Parents.Include(p => p.Parents_students).FirstOrDefaultAsync(s => (s.email == email && s.passwd == password));
+            return _myContext.Parents.Include(p => p.Parents_students).FirstOrDefaultAsync(s => (s.Email == email && s.Passwd == password));
         }
     }
 }

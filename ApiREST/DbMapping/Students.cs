@@ -7,7 +7,7 @@ using System.Runtime;
 
 namespace ApiREST
 {
-    [Table("students")]
+    [Table("Students")]
     public class Students
     {
 
@@ -15,23 +15,23 @@ namespace ApiREST
         [Required]
         [Index(IsUnique = true)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid student_id { get; set; }
+        public Guid Student_id { get; set; }
 
         [MinLength(2), MaxLength(20)]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [MinLength(2), MaxLength(40)]
-        public string surname { get; set; }
-        public string email { get; set; }
-        public string passwd { get; set; }
+        public string Surname { get; set; }
+        public string Email { get; set; }
+        public string Passwd { get; set; }
 
-        public Guid class_id { get; set; }
+        public Guid Class_id { get; set; }
         public Classes Classes { get; set; }
 
-        public ICollection<Attendance> Obecnosci { get; set; }
+        public ICollection<Attendance> Attendances { get; set; }
         [ForeignKey("student_id")]
         public ICollection<Grades> Grades { get; set; }
-        public ICollection<Warnings> Uwagi { get; set; }
+        public ICollection<Warnings> Warnings { get; set; }
         [ForeignKey("student_id")]
         public ICollection<Parents_students> Parents_students { get; set; }
 
@@ -40,7 +40,7 @@ namespace ApiREST
         {
             get
             {
-                return name + " " + surname;
+                return Name + " " + Surname;
             }
         }
 

@@ -41,7 +41,6 @@ namespace ApiREST
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiREST", Version = "v1" });
             });
             services.AddDbContext<MyContext>(op => op.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
-            //services.Configure<MyContext>()
 
         }
 

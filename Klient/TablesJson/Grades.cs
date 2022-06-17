@@ -6,23 +6,23 @@ namespace Dziennik_Szkolny
 { 
     public class Grades
     {
-        public Guid grade_id { get; set; }
-        public string grade { get; set; }
-        public int weight { get; set; }
-        public DateTime date { get; set; }
-        public string desc { get; set; } 
-        public Guid student_id{ get; set; }
-        public Students Student{ get; set; }
-        public Guid teacher_id { get; set; }
+        public Guid Grade_id { get; set; }
+        public string Grade { get; set; }
+        public int Weight { get; set; }
+        public DateTime Date { get; set; }
+        public string Desc { get; set; } 
+        public Guid Student_id { get; set; }
+        public Students Student { get; set; }
+        public Guid Teacher_id { get; set; }
         public Teachers Teachers { get; set; }
-        public Guid subject_id { get; set; }
+        public Guid Subject_id { get; set; }
         public Subjects Subjects { get; set; }
 
         public string Ocena
         {
             get
             {
-                return "Ocena: " + grade + " Waga:" + student_id.ToString();  
+                return "Ocena: " + Grade + " Waga:" + Student_id.ToString();  
             }
         }
 

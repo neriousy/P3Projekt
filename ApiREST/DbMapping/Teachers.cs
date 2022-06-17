@@ -5,22 +5,22 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ApiREST
 {
-    [Table("teachers")]
+    [Table("Teachers")]
     public class Teachers
     {
         [Key]
         [Required]
         [Index(IsUnique = true)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid teacher_id { get; set; }
+        public Guid Teacher_id { get; set; }
 
         [MinLength(2), MaxLength(20)]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [MinLength(2), MaxLength(40)]
-        public string surname { get; set; }
-        public string email { get; set; }
-        public string passwd { get; set; }
+        public string Surname { get; set; }
+        public string Email { get; set; }
+        public string Passwd { get; set; }
 
         [ForeignKey("teacher_id")]
         public ICollection<Lessons> Lessons { get; set; }
@@ -34,7 +34,7 @@ namespace ApiREST
         {
             get
             {
-                return name + " " + surname;
+                return Name + " " + Surname;
             }
         }
 

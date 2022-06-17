@@ -18,7 +18,7 @@ namespace ApiREST
 
         public Task<Students> GetStudentAsync(string email, string password)
         {
-            return _myContext.Students.Include(s => s.Parents_students).FirstOrDefaultAsync(s => (s.email == email && s.passwd == password));
+            return _myContext.Students.Include(s => s.Parents_students).FirstOrDefaultAsync(s => (s.Email == email && s.Passwd == password));
         }
 
         public ICollection<Students> GetAllStudents()

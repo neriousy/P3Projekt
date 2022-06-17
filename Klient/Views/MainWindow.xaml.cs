@@ -71,12 +71,12 @@ namespace Dziennik_Szkolny
             var jgrades = JObject.Parse(data);
             ICollection<Grades> oceny = JsonConvert.DeserializeObject<ICollection<Grades>>(jgrades["grades"].ToString());
             dataOfUser.Text = $"{stud?.Dane}";
-            body.Text = oceny.Count.ToString();
+            //body.Text = oceny.Count.ToString();
             foreach(Grades o in oceny)
             {
-                if(o.teacher_id != o.student_id)
+                if(o.Teacher_id != o.Student_id)
                 {
-                    body.Text += o.teacher_id + " " + o.student_id + " ";
+                    body.Text += o.Teacher_id + " " + o.Student_id + " ";
                 }
                 
             }

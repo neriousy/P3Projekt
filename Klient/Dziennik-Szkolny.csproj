@@ -10,15 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <COMReference Include="{215d64d2-031c-33c7-96e3-61794cd1ee61}">
-      <WrapperTool>tlbimp</WrapperTool>
-      <VersionMinor>0</VersionMinor>
-      <VersionMajor>2</VersionMajor>
-      <Guid>215d64d2-031c-33c7-96e3-61794cd1ee61</Guid>
-    </COMReference>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.3.0" />
     <PackageReference Include="EntityFramework6.Npgsql" Version="6.3.0" />
     <PackageReference Include="MaterialDesignThemes" Version="4.1.0" />
@@ -31,8 +22,6 @@
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Nowy folder\" />
-  </ItemGroup>
+ 
 
 </Project>
