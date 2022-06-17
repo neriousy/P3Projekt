@@ -17,5 +17,8 @@ namespace Dziennik_Szkolny
         public ICollection<Lessons> Lessons { get; set; }
         public ICollection<Grades> Grades { get; set; }
 
+        [ForeignKey("Subject_id")]
+        public Lesson_plan Lesson_plan { get; set; }
+
     }
 }

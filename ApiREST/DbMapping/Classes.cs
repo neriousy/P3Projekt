@@ -13,12 +13,15 @@ namespace ApiREST
         [Index(IsUnique = true)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Class_id { get; set; }
-        public string StartYear { get; set; }
+        public int StartYear { get; set; }
         public string Course { get; set; }
 
         [ForeignKey("Class_id")]
         public ICollection<Students> Students { get; set; }
         public ICollection<Lessons> Lessons { get; set; }
+        
+        [ForeignKey("Class_id")]
+        public ICollection<Lesson_plan> Lesson_Plan { get; set; }
 
         [NotMapped]
         public string Opis
