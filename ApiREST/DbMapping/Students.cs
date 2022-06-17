@@ -14,6 +14,7 @@ namespace ApiREST
         [Key]
         [Required]
         [Index(IsUnique = true)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid student_id { get; set; }
 
         [MinLength(2), MaxLength(20)]

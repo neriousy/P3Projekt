@@ -11,7 +11,7 @@ namespace ApiREST
         [Key]
         [Required]
         [Index(IsUnique = true)]
-
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid subject_id { get; set; }
         public string subjectname { get; set; }
 

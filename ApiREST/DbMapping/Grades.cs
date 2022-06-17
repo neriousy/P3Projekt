@@ -10,6 +10,7 @@ namespace ApiREST
         [Key]
         [Required]
         [Index(IsUnique = true)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid grade_id { get; set; }
         public string grade { get; set; }
         public int weight { get; set; }

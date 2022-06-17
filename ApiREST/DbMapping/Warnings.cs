@@ -10,6 +10,7 @@ namespace ApiREST
         [Key]
         [Required]
         [Index(IsUnique = true)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid warning_id { get; set; }
         public string desc { get; set; }
         public DateTime date { get; set; }

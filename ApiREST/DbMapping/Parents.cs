@@ -11,6 +11,7 @@ namespace ApiREST
         [Key]
         [Required]
         [Index(IsUnique = true)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid parent_id { get; set; }
 
         [MinLength(2), MaxLength(20)]

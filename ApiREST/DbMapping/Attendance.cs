@@ -10,6 +10,7 @@ namespace ApiREST
         [Key]
         [Required]
         [Index(IsUnique = true)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid attendance_id { get; set; }
         public DateTime date { get; set; }
         public string attendance { get; set; }
