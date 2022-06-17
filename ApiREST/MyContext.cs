@@ -10,16 +10,16 @@ namespace ApiREST
 {
     public class MyContext : DbContext
     {
-        public DbSet<Students> Studenci { get; set; }
-        public DbSet<Attendance> Obecnosc { get; set; }
-        public DbSet<Classes> Klasy { get; set; }
+        public DbSet<Students> Students { get; set; }
+        public DbSet<Attendance> Attendance { get; set; }
+        public DbSet<Classes> Classes { get; set; }
         public DbSet<Grades> Grades { get; set; }
-        public DbSet<Lessons> Lekcje { get; set; }
+        public DbSet<Lessons> Lessons { get; set; }
         public DbSet<Parents_students> Parents_students { get; set; }
-        public DbSet<Subjects> Przedmioty { get; set; }
-        public DbSet<Warnings> Uwagi { get; set; }
-        public DbSet<Parents> Rodzice { get; set; }
-        public DbSet<Teachers> Nauczyciele { get; set; }
+        public DbSet<Subjects> Subjects { get; set; }
+        public DbSet<Warnings> Warnings { get; set; }
+        public DbSet<Parents> Parents { get; set; }
+        public DbSet<Teachers> Teachers { get; set; }
 
         public MyContext(DbContextOptions<MyContext> options) : base(options)
         {

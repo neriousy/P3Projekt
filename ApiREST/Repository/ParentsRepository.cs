@@ -16,11 +16,11 @@ namespace ApiREST
         }
         public ICollection<Parents> GetAllParents()
         {
-            return _myContext.Rodzice.ToList();
+            return _myContext.Parents.ToList();
         }
         public Task<Parents> GetParentAsync(string email, string password)
         {
-            return _myContext.Rodzice.Include(p => p.Parents_students).FirstOrDefaultAsync(s => (s.email == email && s.passwd == password));
+            return _myContext.Parents.Include(p => p.Parents_students).FirstOrDefaultAsync(s => (s.email == email && s.passwd == password));
         }
     }
 }
