@@ -45,11 +45,12 @@ namespace ApiREST
 
             modelBuilder.Entity<Students>().Navigation(s => s.Grades).AutoInclude();
 
-            modelBuilder.Entity<Parents_students>().Navigation(p => p.Parent).AutoInclude();
-            modelBuilder.Entity<Parents_students>().Navigation(s => s.Student).AutoInclude();
-
+            
             //modelBuilder.Entity<Students>().Navigation(s => s.Parents_students).AutoInclude();
             //modelBuilder.Entity<Parents>().Navigation(p => p.Parents_students).AutoInclude();
+
+            modelBuilder.Entity<Parents_students>().Navigation(p => p.Parent).AutoInclude();
+            modelBuilder.Entity<Parents_students>().Navigation(s => s.Student).AutoInclude();
 
         }
     }

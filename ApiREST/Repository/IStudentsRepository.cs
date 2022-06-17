@@ -7,7 +7,7 @@ namespace ApiREST
 {
     public interface IStudentsRepository<T>
     {
-        public T GetStudent(string email, string password);
+        public Task<T> GetStudentAsync(string email, string password);
         public ICollection<T> GetAllStudents();
 
         

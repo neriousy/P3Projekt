@@ -8,6 +8,6 @@ namespace ApiREST
     public interface IParentsRepository<T>
     {
         public ICollection<T> GetAllParents();
-        public T GetParent(string email, string password);
+        public Task<T> GetParentAsync(string email, string password);
     }
 }
