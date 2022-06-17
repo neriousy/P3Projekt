@@ -18,24 +18,12 @@ namespace ApiREST.Controllers
         {
             _studentsRepository = studentsRepository;
         }
-
-        //[HttpPost]
-        //[Route("GetStudentPasswd")]
-        //public ActionResult<Students> GetStudent(string email, string password)
-        //{
-        //    Students student =  _studentsRepository.GetStudent(email, password);
-        //    if(student == null)
-        //    {
-        //        return NotFound(student);
-        //    }
-        //    return Ok(student);
-        //}
         
         [HttpPost]
         [Route("PostGetStudent")]
-        public IActionResult PostGetStudent([FromForm] string email, [FromForm] string passwd)
+        public async Task<IActionResult> PostGetStudent([FromForm] string email, [FromForm] string passwd)
         {
-            Students resp = _studentsRepository.GetStudent(email, passwd);
+            Students resp = await _studentsRepository.GetStudentAsync(email, passwd);
 
             return Ok(resp);
         }

@@ -18,9 +18,9 @@ namespace ApiREST
         {
             return _myContext.Rodzice.ToList();
         }
-        public Parents GetParent(string email, string password)
+        public Task<Parents> GetParentAsync(string email, string password)
         {
-            return _myContext.Rodzice.Include(p => p.Parents_students).FirstOrDefault(s => (s.email == email && s.passwd == password));
+            return _myContext.Rodzice.Include(p => p.Parents_students).FirstOrDefaultAsync(s => (s.email == email && s.passwd == password));
         }
     }
 }
