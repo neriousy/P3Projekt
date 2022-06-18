@@ -36,8 +36,8 @@ namespace ApiREST
             modelBuilder.Entity<Parents_students>().HasKey(o => new { o.Student_id, o.Parent_id });
 
 
-            modelBuilder.Entity<Grades>().Property<Guid>("Student_id");
-            modelBuilder.Entity<Grades>().HasOne(s => s.Student).WithMany(g => g.Grades).HasForeignKey("Student_id");
+            //modelBuilder.Entity<Grades>().Property<Guid>("Student_id");
+            //modelBuilder.Entity<Grades>().HasOne(s => s.Student).WithMany(g => g.Grades).HasForeignKey("Student_id");
 
             modelBuilder.Entity<Subjects>().Property<Guid>("Subject_id");
             modelBuilder.Entity<Subjects>().HasOne(s => s.Lesson_plan).WithMany(l => l.Subjects).HasForeignKey("Subject_id");

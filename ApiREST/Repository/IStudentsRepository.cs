@@ -8,8 +8,6 @@ namespace ApiREST
     public interface IStudentsRepository<T>
     {
         public Task<T> GetStudentAsync(string email, string password);
-        public ICollection<T> GetAllStudents();
 
-        
     }
 }

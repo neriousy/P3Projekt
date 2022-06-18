@@ -8,7 +8,6 @@ namespace ApiREST
     public class Warnings
     {
         [Key]
-        [Required]
         [Index(IsUnique = true)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Warning_id { get; set; }

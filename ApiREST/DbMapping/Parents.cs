@@ -9,7 +9,6 @@ namespace ApiREST
     public class Parents
     {
         [Key]
-        [Required]
         [Index(IsUnique = true)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Parent_id { get; set; }

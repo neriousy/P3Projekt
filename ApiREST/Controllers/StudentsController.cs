@@ -27,12 +27,7 @@ namespace ApiREST.Controllers
 
             return Ok(resp);
         }
-        [HttpGet]
-        [Route("GetAllStudents")]
-        public IActionResult GetAllStudents()
-        {
-            ICollection<Students> students = _studentsRepository.GetAllStudents();
-            return Ok(students);
-        }
+
+
     }
 }

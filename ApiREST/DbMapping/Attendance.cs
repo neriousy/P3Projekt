@@ -8,7 +8,6 @@ namespace ApiREST
     public class Attendance
     {
         [Key]
-        [Required]
         [Index(IsUnique = true)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Attendace_id { get; set; }

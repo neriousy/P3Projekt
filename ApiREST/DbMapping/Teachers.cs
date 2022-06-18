@@ -9,7 +9,6 @@ namespace ApiREST
     public class Teachers
     {
         [Key]
-        [Required]
         [Index(IsUnique = true)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Teacher_id { get; set; }

@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApiREST
 {
     public interface IGradesRepository<T>
     {
-        public ICollection<T> GetGrades(Guid uuid);
-        public ICollection<T> GetAllGrades();
+        public Task<List<T>> GetGrades(Guid uuid);
+        public Task<Guid> InsertGrade(Grades grade);
+        public Task<int> EditGrade(Guid uuid, String Grade, int Weight, String desc);
+        public Task<int> DeleteGrade(Guid uuid);
+
+
     }
 }

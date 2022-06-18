@@ -21,10 +21,5 @@ namespace ApiREST
             return _myContext.Students.Include(s => s.Parents_students).FirstOrDefaultAsync(s => (s.Email == email && s.Passwd == password));
         }
 
-        public ICollection<Students> GetAllStudents()
-        {
-            return _myContext.Students.ToList();
-        }
-
     }
 }

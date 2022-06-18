@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using System.Collections;
 
 namespace ApiREST
 {
@@ -14,16 +16,49 @@ namespace ApiREST
             _myContext = context;
         }
 
-        public ICollection<Grades> GetGrades(Guid uuid)
+        public Task<List<Grades>> GetGrades(Guid uuid)
         {
-            Students student = _myContext.Students.FirstOrDefault(s => s.Student_id == uuid);
-            return student?.Grades.ToList();
+            return _myContext.Grades.Where(g => g.Student_id == uuid).ToListAsync();
         }
-            
 
-        public ICollection<Grades> GetAllGrades()
+
+        public async Task<Guid> InsertGrade(Grades grade)
         {
-            return _myContext.Grades.ToList();
+            grade.Date = DateTime.Now;
+            await _myContext.AddAsync(grade);
+            await _myContext.SaveChangesAsync();
+
+            return grade.Grade_id;
+        }
+
+        public async Task<int> EditGrade(Guid uuid, String Grade, int Weight, String desc)
+        {
+            Grades grade = await _myContext.Grades.FindAsync(uuid);
+            if(grade == null)
+            {
+                return 0;
+            }
+            grade.Grade = Grade;
+            grade.Weight = Weight;
+            grade.Desc = desc;
+
+            await _myContext.SaveChangesAsync();
+
+            return 1;
+        }
+
+        public async Task<int> DeleteGrade(Guid uuid)
+        {
+            Grades grade = await _myContext.Grades.FindAsync(uuid);
+            if(grade == null)
+            {
+                return 0;
+            }
+
+            _myContext.Remove(grade);
+            await _myContext.SaveChangesAsync();
+
+            return 1;
         }
     }
 }

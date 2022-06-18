@@ -19,18 +19,11 @@ namespace ApiREST.Controllers
         }
 
         [HttpPost]
-        [Route("GetParentPasswd")]
+        [Route("PostGetParent")]
         public async Task<IActionResult> GetParent([FromForm] string email, [FromForm] string password)
         {
             Parents parent = await _parentsRepository.GetParentAsync(email, password);
             return parent != null ? Ok(parent) : NotFound(parent);
-        }
-
-        [HttpGet]
-        [Route("GetAllParents")]
-        public IActionResult GetAllParents()
-        {
-            return Ok(_parentsRepository.GetAllParents());
         }
     }
 }
