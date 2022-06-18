@@ -10,7 +10,7 @@ namespace ApiREST
     {
         public Task<List<T>> GetGrades(Guid uuid);
         public Task<Guid> InsertGrade(Grades grade);
-        public Task<int> EditGrade(Guid uuid, String Grade, int Weight, String desc);
+        public Task<int> EditGrade(Guid uuid, String Grade, int Weight, String desc, Guid Teacher_id);
         public Task<int> DeleteGrade(Guid uuid);
 
 

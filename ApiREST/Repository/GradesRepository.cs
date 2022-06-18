@@ -31,12 +31,16 @@ namespace ApiREST
             return grade.Grade_id;
         }
 
-        public async Task<int> EditGrade(Guid uuid, String Grade, int Weight, String desc)
+        public async Task<int> EditGrade(Guid uuid, String Grade, int Weight, String desc, Guid Teacher_id)
         {
             Grades grade = await _myContext.Grades.FindAsync(uuid);
             if(grade == null)
             {
                 return 0;
+            }
+            if(grade.Teacher_id != Teacher_id)
+            {
+                return -1;
             }
             grade.Grade = Grade;
             grade.Weight = Weight;

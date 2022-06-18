@@ -40,8 +40,8 @@ namespace ApiREST
             { 
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiREST", Version = "v1" });
             });
-            services.AddDbContext<MyContext>(op => op.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
-
+            services.AddDbContext<MyContext>(op => op.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"), op => op.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)));
+            services.AddDbContext<MyContext>(op => op.UseLazyLoadingProxies(true));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

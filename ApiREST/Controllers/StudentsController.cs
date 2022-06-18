@@ -24,7 +24,7 @@ namespace ApiREST.Controllers
         public async Task<IActionResult> PostGetStudent([FromForm] string email, [FromForm] string passwd)
         {
             Students resp = await _studentsRepository.GetStudentAsync(email, passwd);
-
+            
             return Ok(resp);
         }
 

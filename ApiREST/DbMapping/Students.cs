@@ -25,7 +25,7 @@ namespace ApiREST
         public string Email { get; set; }
         public string Passwd { get; set; }
 
-        protected Guid Class_id { get; set; }
+        public Guid Class_id { get; set; }
         public Classes Classes { get; set; }
 
         public ICollection<Attendance> Attendances { get; set; }

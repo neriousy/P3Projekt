@@ -19,9 +19,18 @@ namespace ApiREST
         public Guid Teacher_id { get; set; }
         public Teachers Teachers { get; set; }
         public DateTime Start_time { get; set; }
+        public string Topic { get; set; }
 
         [ForeignKey("Lesson_id")]
         public ICollection<Attendance> Attendances { get; set; }
+
+        public Lessons(Guid Subject_id, Guid Class_id, Guid Teacher_id, string Topic)
+        {
+            this.Subject_id = Subject_id;
+            this.Class_id = Class_id;
+            this.Teacher_id = Teacher_id;
+            this.Topic = Topic;
+        }
 
     }
 }

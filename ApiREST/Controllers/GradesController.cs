@@ -20,11 +20,13 @@ namespace ApiREST.Controllers
             _gradesRepository = gradesRepository;
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("GetGrades")]
         public async Task<IActionResult> GetGrades([FromForm] Guid uuid)
         {
             ICollection<Grades> oceny = await _gradesRepository.GetGrades(uuid);
+            IEnumerable<Grades> selection = oceny.Select(g => new Grades {Grade = g.Grade, Weight = g.Weight, Grade_id = g.Grade_id, Date = g.Date, Desc = g.Desc, Subjects = g.Subjects, Teachers = g.Teachers});
+            
             return oceny != null ? Ok(oceny) : NotFound(oceny);
         }
 
@@ -44,12 +46,14 @@ namespace ApiREST.Controllers
 
         [HttpPut]
         [Route("EditGrade")]
-        public async Task<IActionResult> EditGrade([FromForm] Guid uuid,[FromForm] string Grade, [FromForm] int Weight, [FromForm] string Desc)
+        public async Task<IActionResult> EditGrade([FromForm] Guid uuid,[FromForm] string Grade, [FromForm] int Weight, [FromForm] string Desc, [FromForm] Guid Teacher_id)
         {
-            int result = await _gradesRepository.EditGrade(uuid, Grade, Weight, Desc);
+            int result = await _gradesRepository.EditGrade(uuid, Grade, Weight, Desc, Teacher_id);
             if(result == 0)
             {
                 return NotFound();
+            }else if(result == -1){
+                return Unauthorized();
             }
 
             return NoContent();

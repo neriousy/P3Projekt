@@ -32,6 +32,7 @@ namespace ApiREST
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             modelBuilder.HasDefaultSchema("public");
             modelBuilder.Entity<Parents_students>().HasKey(o => new { o.Student_id, o.Parent_id });
 
@@ -47,6 +48,7 @@ namespace ApiREST
 
             modelBuilder.Entity<Students>().Navigation(s => s.Grades).AutoInclude();
             modelBuilder.Entity<Grades>().Navigation(g => g.Subjects).AutoInclude();
+            modelBuilder.Entity<Grades>().Navigation(g => g.Teachers).AutoInclude();
             modelBuilder.Entity<Students>().Navigation(s => s.Classes).AutoInclude();
             modelBuilder.Entity<Lesson_plan>().Navigation(l => l.Subjects).AutoInclude();
             modelBuilder.Entity<Classes>().Navigation(c => c.Lesson_Plan).AutoInclude();
