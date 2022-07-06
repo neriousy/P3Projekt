@@ -37,8 +37,18 @@ namespace ApiREST
             modelBuilder.Entity<Parents_students>().HasKey(o => new { o.Student_id, o.Parent_id });
 
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+            modelBuilder.Entity<Grades>().Property<Guid>("Student_id");
+            modelBuilder.Entity<Grades>().HasOne(s => s.Student).WithMany(g => g.Grades).HasForeignKey("Student_id");
+=======
             //modelBuilder.Entity<Grades>().Property<Guid>("Student_id");
             //modelBuilder.Entity<Grades>().HasOne(s => s.Student).WithMany(g => g.Grades).HasForeignKey("Student_id");
+>>>>>>> 43642cb3c38e8ce6f67c16f0908586bc58be5c6f
+=======
+            //modelBuilder.Entity<Grades>().Property<Guid>("Student_id");
+            //modelBuilder.Entity<Grades>().HasOne(s => s.Student).WithMany(g => g.Grades).HasForeignKey("Student_id");
+>>>>>>> 43642cb3c38e8ce6f67c16f0908586bc58be5c6f
 
             modelBuilder.Entity<Subjects>().Property<Guid>("Subject_id");
             modelBuilder.Entity<Subjects>().HasOne(s => s.Lesson_plan).WithMany(l => l.Subjects).HasForeignKey("Subject_id");
@@ -48,10 +58,20 @@ namespace ApiREST
 
             modelBuilder.Entity<Students>().Navigation(s => s.Grades).AutoInclude();
             modelBuilder.Entity<Grades>().Navigation(g => g.Subjects).AutoInclude();
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+=======
+>>>>>>> 43642cb3c38e8ce6f67c16f0908586bc58be5c6f
             modelBuilder.Entity<Grades>().Navigation(g => g.Teachers).AutoInclude();
             modelBuilder.Entity<Students>().Navigation(s => s.Classes).AutoInclude();
             modelBuilder.Entity<Lesson_plan>().Navigation(l => l.Subjects).AutoInclude();
             modelBuilder.Entity<Classes>().Navigation(c => c.Lesson_Plan).AutoInclude();
+<<<<<<< HEAD
+>>>>>>> 43642cb3c38e8ce6f67c16f0908586bc58be5c6f
+=======
+>>>>>>> 43642cb3c38e8ce6f67c16f0908586bc58be5c6f
             
             //modelBuilder.Entity<Students>().Navigation(s => s.Parents_students).AutoInclude();
             //modelBuilder.Entity<Parents>().Navigation(p => p.Parents_students).AutoInclude();

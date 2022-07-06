@@ -90,6 +90,6 @@
                 </ListView>
             </StackPanel>
         </Grid>
-        <TextBlock x:Name="body" HorizontalAlignment="Center" Margin="0,107,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="614" Width="1048" IsEnabled="False" Foreground="Black"/>
+        <TextBlock x:Name="body" HorizontalAlignment="Center" Margin="0,107,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="614" Width="1005" IsEnabled="False" Foreground="Black"/>
     </Grid>
 </Window>

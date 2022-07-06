@@ -51,9 +51,9 @@ namespace Dziennik_Szkolny
             if (result != "-1")
             {
                 MainWindow mainWindow = new MainWindow();
-                mainWindow.start(result);
                 this.Hide();
                 mainWindow.Show();
+                mainWindow.start(result);
             }
             
             

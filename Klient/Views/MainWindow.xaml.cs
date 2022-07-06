@@ -20,6 +20,7 @@ using System.IO;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using JsonSerializer = System.Text.Json.JsonSerializer;
+using System.Data;
 
 namespace Dziennik_Szkolny
 {
@@ -65,21 +66,24 @@ namespace Dziennik_Szkolny
             login.Show();
         }
 
-        public void start(string data)
+        public async void start(string data)
         {
-            stud =  JsonSerializer.Deserialize<Students?>(data);
+            byte[] byteArray = Encoding.UTF8.GetBytes(data);
+            MemoryStream stream = new MemoryStream(byteArray);
+            stud = await JsonSerializer.DeserializeAsync<Students?>(stream);
             var jgrades = JObject.Parse(data);
             ICollection<Grades> oceny = JsonConvert.DeserializeObject<ICollection<Grades>>(jgrades["grades"].ToString());
             dataOfUser.Text = $"{stud?.Dane}";
-            //body.Text = oceny.Count.ToString();
-            foreach(Grades o in oceny)
+            body.Text = "";
+            //DataTable grades = new DataTable();
+            //grades.Columns.Add("Nazwa", typeof(string));
+            //grades.Columns.Add("Ocena", typeof(int));
+            //foreach (Grades o in oceny)
             {
-                if(o.Teacher_id != o.Student_id)
-                {
-                    body.Text += o.Teacher_id + " " + o.Student_id + " ";
-                }
-                
+                //grades.Rows.Add(o.Subject_id, o.Ocena);
             }
+            //body.Text = grades.Columns[0].ToString() + "\t\t\t\t" + grades.Columns[1].ToString();
+            //body.Text = grades.Rows[0].ToString();
         }
     }
 }
