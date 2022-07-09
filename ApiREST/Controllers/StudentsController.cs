@@ -32,6 +32,23 @@ namespace ApiREST.Controllers
             return Ok(resp);
         }
 
+        [HttpGet]
+        [Route("GetStudentsByClass")]
+        public async Task<IActionResult> GetStudentsByclass(Guid uuid)
+        {
+            ICollection<Students> resp = await _studentsRepository.GetStudentsByClassAsync(uuid);
+            foreach(var Stud in resp) {
+                Stud.Email = null;
+                Stud.Passwd = null;
+            }
+            if(resp == null)
+            {
+                return NotFound(resp);
+            }
+
+            return Ok(resp);
+        }
+
 
     }
 }
