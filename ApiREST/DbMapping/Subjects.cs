@@ -12,7 +12,7 @@ namespace ApiREST
         [Required]
         [Index(IsUnique = true)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        protected Guid Subject_id { get; set; }
+        public Guid Subject_id { get; set; }
         public string Subjectname { get; set; }
 
         [ForeignKey("Subject_id")]

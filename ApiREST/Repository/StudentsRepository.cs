@@ -21,5 +21,10 @@ namespace ApiREST
             return _myContext.Students.Include(s => s.Parents_students).FirstOrDefaultAsync(s => (s.Email == email && s.Passwd == password));
         }
 
+        public Task<List<Students>> GetStudentsByClassAsync(Guid uuid)
+        {
+            return _myContext.Students.Where(s => s.Class_id == uuid).ToListAsync();
+        }
+
     }
 }

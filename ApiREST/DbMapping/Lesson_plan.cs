@@ -16,7 +16,7 @@ namespace ApiREST
         public ICollection<Subjects> Subjects { get; set; }
         public Guid Class_id { get; set; }
         public Classes Class { get; set; }
-        protected Guid Teacher_id { get; set; }
+        public Guid Teacher_id { get; set; }
         public Teachers Teacher { get; set; }
         public int Start_time { get; set; }
         public int Day { get; set; }
