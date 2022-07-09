@@ -66,14 +66,14 @@ namespace Dziennik_Szkolny
             login.Show();
         }
 
-        public async void start(string data)
+        public async void start(string data, char type)
         {
             byte[] byteArray = Encoding.UTF8.GetBytes(data);
             MemoryStream stream = new MemoryStream(byteArray);
             stud = await JsonSerializer.DeserializeAsync<Students?>(stream);
             var jgrades = JObject.Parse(data);
             ICollection<Grades> oceny = JsonConvert.DeserializeObject<ICollection<Grades>>(jgrades["grades"].ToString());
-            dataOfUser.Text = $"{stud?.Dane}";
+            dataOfUser.Text = $"{stud?.dane}";
             body.Text = "";
             //DataTable grades = new DataTable();
             //grades.Columns.Add("Nazwa", typeof(string));

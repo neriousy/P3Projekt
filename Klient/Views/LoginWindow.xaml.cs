@@ -45,18 +45,28 @@ namespace Dziennik_Szkolny
 
         private async void loginButton_Click(object sender, RoutedEventArgs e)
         {
-            
-            RestLogin client = new RestLogin();
-            string result = await client.makeRequestLogin(userInputtedUsername.Text, userInputtedPassword.Password.ToString());
+            string message;
+            string caption = "Error";
+            char type;
+            RestLoginStudent clientStudent = new RestLoginStudent();
+            RestLoginParent clientParent = new RestLoginParent();
+            string result = await clientStudent.makeRequestLogin(userInputtedUsername.Text, userInputtedPassword.Password.ToString());
             if (result != "-1")
             {
+                type = 's';
                 MainWindow mainWindow = new MainWindow();
                 this.Hide();
                 mainWindow.Show();
-                mainWindow.start(result);
+                mainWindow.start(result, type);
             }
-            
-            
+            /// Wprowadzono niepoprawne dane do logowania
+            else
+            {
+                message = "Niepoprawne dane logowania";
+                MessageBox.Show(message, caption, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
+            }
+
+
         }
 
     }
