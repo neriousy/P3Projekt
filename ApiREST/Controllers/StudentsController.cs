@@ -25,6 +25,10 @@ namespace ApiREST.Controllers
         {
             Students resp = await _studentsRepository.GetStudentAsync(email, passwd);
             
+            if(resp == null)
+            {
+                return NotFound(resp);
+            }
             return Ok(resp);
         }
 

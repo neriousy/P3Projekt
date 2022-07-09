@@ -16,9 +16,14 @@ namespace ApiREST
             _myContext = context;
         }
 
-        public Task<List<Grades>> GetGrades(Guid uuid)
+        public Task<List<Grades>> GetGradesStudent(Guid uuid)
         {
             return _myContext.Grades.Where(g => g.Student_id == uuid).ToListAsync();
+        }
+
+        public Task<List<Grades>> GetGradesSubject(Guid uuid)
+        {
+            return _myContext.Grades.Where(g => g.Subject_id == uuid).ToListAsync();
         }
 
 

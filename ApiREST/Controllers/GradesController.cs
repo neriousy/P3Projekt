@@ -21,12 +21,21 @@ namespace ApiREST.Controllers
         }
 
         [HttpGet]
-        [Route("GetGrades")]
-        public async Task<IActionResult> GetGrades([FromForm] Guid uuid)
+        [Route("GetGradesStudent")]
+        public async Task<IActionResult> GetGradesStudent(Guid uuid)
         {
-            ICollection<Grades> oceny = await _gradesRepository.GetGrades(uuid);
-            IEnumerable<Grades> selection = oceny.Select(g => new Grades {Grade = g.Grade, Weight = g.Weight, Grade_id = g.Grade_id, Date = g.Date, Desc = g.Desc, Subjects = g.Subjects, Teachers = g.Teachers});
+            ICollection<Grades> oceny = await _gradesRepository.GetGradesStudent(uuid);
+            //IEnumerable<Grades> selection = oceny.Select(g => new Grades {Grade = g.Grade, Weight = g.Weight, Grade_id = g.Grade_id, Date = g.Date, Desc = g.Desc, Subjects = g.Subjects, Teachers = g.Teachers});
             
+            return oceny != null ? Ok(oceny) : NotFound(oceny);
+        }
+
+        [HttpGet]
+        [Route("GetGradesSubject")]
+        public async Task<IActionResult> GetGradesSubject(Guid uuid)
+        {
+            ICollection<Grades> oceny = await _gradesRepository.GetGradesSubject(uuid);
+
             return oceny != null ? Ok(oceny) : NotFound(oceny);
         }
 

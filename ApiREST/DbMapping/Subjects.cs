@@ -12,12 +12,12 @@ namespace ApiREST
         [Required]
         [Index(IsUnique = true)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        protected Guid Subject_id { get; set; }
+        public Guid Subject_id { get; set; }
         public string Subjectname { get; set; }
 
         [ForeignKey("Subject_id")]
-        protected ICollection<Lessons> Lessons { get; set; }
-        protected ICollection<Grades> Grades { get; set; }
+        public ICollection<Lessons> Lessons { get; set; }
+        public ICollection<Grades> Grades { get; set; }
 
         [ForeignKey("Subject_id")]
         public Lesson_plan Lesson_plan { get; set; }

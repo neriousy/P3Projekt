@@ -31,6 +31,7 @@ namespace ApiREST
         public ICollection<Attendance> Attendances { get; set; }
         [ForeignKey("Student_id")]
         public ICollection<Grades> Grades { get; set; }
+        [ForeignKey("Student_id")]
         public ICollection<Warnings> Warnings { get; set; }
         [ForeignKey("Student_id")]
         public ICollection<Parents_students> Parents_students { get; set; }

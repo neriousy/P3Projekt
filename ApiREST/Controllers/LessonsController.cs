@@ -46,7 +46,6 @@ namespace ApiREST.Controllers
 
         [HttpPut]
         [Route("EditLesson")]
-
         public async Task<IActionResult> EditLesson([FromForm] Guid uuid, [FromForm] Guid Subject_id, [FromForm] Guid Class_id, [FromForm] Guid Teacher_id, [FromForm] string Topic)
         {
             int result = await _lessonsRepository.EditLesson(uuid, Subject_id, Class_id, Teacher_id, Topic);
@@ -64,7 +63,6 @@ namespace ApiREST.Controllers
 
         [HttpDelete]
         [Route("DeleteLesson")]
-
         public async Task<IActionResult> DeleteLesson([FromForm] Guid uuid)
         {
             int result = await _lessonsRepository.DeleteLesson(uuid);

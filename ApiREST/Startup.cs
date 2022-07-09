@@ -36,6 +36,11 @@ namespace ApiREST
             services.AddScoped<IStudentsRepository<Students>, StudentsRepository>();
             services.AddScoped<IGradesRepository<Grades>, GradesRepository>();
             services.AddScoped<IParentsRepository<Parents>, ParentsRepository>();
+            services.AddScoped<IWarningsRepository<Warnings>, WarningsRepository>();
+            services.AddScoped<ITeacherRepository<Teachers>, TeacherRepository>();
+            services.AddScoped<ILessonsRepository<Lessons>, LessonsRepository>();
+            services.AddScoped<ISubjectsRepository<Subjects>, SubjectsRepository>();
+
             services.AddSwaggerGen(c =>
             { 
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiREST", Version = "v1" });
