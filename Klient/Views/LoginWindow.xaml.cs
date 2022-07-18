@@ -50,6 +50,7 @@ namespace Dziennik_Szkolny
             char type;
             RestLoginStudent clientStudent = new RestLoginStudent();
             RestLoginParent clientParent = new RestLoginParent();
+            RestLoginTeacher clientTeacher = new RestLoginTeacher();
             string result = await clientStudent.makeRequestLogin(userInputtedUsername.Text, userInputtedPassword.Password.ToString());
             if (result != "-1")
             {
@@ -57,16 +58,38 @@ namespace Dziennik_Szkolny
                 MainWindow mainWindow = new MainWindow();
                 this.Hide();
                 mainWindow.Show();
-                mainWindow.start(result, type);
+                mainWindow.startStud(result, type);
             }
-            /// Wprowadzono niepoprawne dane do logowania
             else
             {
-                message = "Niepoprawne dane logowania";
-                MessageBox.Show(message, caption, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
+                result = await clientParent.makeRequestLogin(userInputtedUsername.Text, userInputtedPassword.Password.ToString());
+                if (result != "-1")
+                {
+                    type = 'r';
+                    MainWindow mainWindow = new MainWindow();
+                    this.Hide();
+                    mainWindow.Show();
+                    mainWindow.startPar(result, type);
+                }
+                else
+                {
+                    result = await clientTeacher.makeRequestLogin(userInputtedUsername.Text, userInputtedPassword.Password.ToString());
+                    if (result != "-1")
+                    {
+                        type = 'n';
+                        MainWindow mainWindow = new MainWindow();
+                        this.Hide();
+                        mainWindow.Show();
+                        //mainWindow.startStud(result, type);
+                    }
+                    /// Wprowadzono niepoprawne dane do logowania
+                    else
+                    {
+                        message = "Niepoprawne dane logowania";
+                        MessageBox.Show(message, caption, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
+                    }
+                }
             }
-
-
         }
 
     }

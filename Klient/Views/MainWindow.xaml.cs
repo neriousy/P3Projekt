@@ -1,26 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Diagnostics;
-using MaterialDesignThemes;
-
-using System.Text.Json;
 using System.IO;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using JsonSerializer = System.Text.Json.JsonSerializer;
-using System.Data;
 
 namespace Dziennik_Szkolny
 {
@@ -29,7 +14,8 @@ namespace Dziennik_Szkolny
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Students? stud;
+        private Students stud;
+        private Parents par;
         public MainWindow()
         {
             InitializeComponent();
@@ -66,15 +52,37 @@ namespace Dziennik_Szkolny
             login.Show();
         }
 
-        public async void start(string data, char type)
+        public async void startStud(string data, char type)
         {
             byte[] byteArray = Encoding.UTF8.GetBytes(data);
             MemoryStream stream = new MemoryStream(byteArray);
-            stud = await JsonSerializer.DeserializeAsync<Students?>(stream);
+            stud = await JsonSerializer.DeserializeAsync<Students>(stream);
             var jgrades = JObject.Parse(data);
             ICollection<Grades> oceny = JsonConvert.DeserializeObject<ICollection<Grades>>(jgrades["grades"].ToString());
-            dataOfUser.Text = $"{stud?.dane}";
+            dataOfUser.Text = $"{stud.dane}";
             body.Text = "";
+            //DataTable grades = new DataTable();
+            //grades.Columns.Add("Nazwa", typeof(string));
+            //grades.Columns.Add("Ocena", typeof(int));
+            //foreach (Grades o in oceny)
+            {
+                //grades.Rows.Add(o.Subject_id, o.Ocena);
+            }
+            //body.Text = grades.Columns[0].ToString() + "\t\t\t\t" + grades.Columns[1].ToString();
+            //body.Text = grades.Rows[0].ToString();
+        }
+        public async void startPar(string data, char type)
+        {
+            byte[] byteArray = Encoding.UTF8.GetBytes(data);
+            MemoryStream stream = new MemoryStream(byteArray);
+            par = await JsonSerializer.DeserializeAsync<Parents>(stream);
+            var jpar = JObject.Parse(data);
+            //jpar = JObject.Parse(jpar["parents_students"].ToString());
+            //var jstud = JObject.Parse(jpar["student"].ToString());
+            //ICollection<Students> student = JsonConvert.DeserializeObject<ICollection<Students>>(jstud["student"].ToString());
+            //stud = JsonConvert.DeserializeObject<Students>(jstud["student"].ToString());
+            //dataOfUser.Text = $"{stud.dane}";
+            //body.Text = $"{jstud.ToString()}";
             //DataTable grades = new DataTable();
             //grades.Columns.Add("Nazwa", typeof(string));
             //grades.Columns.Add("Ocena", typeof(int));

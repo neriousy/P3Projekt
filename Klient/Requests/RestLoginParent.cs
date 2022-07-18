@@ -22,10 +22,10 @@ namespace Dziennik_Szkolny
             string message;
             string caption = "Error";
             var strResponseValue = string.Empty;
-            string url = "https://localhost:44307/api/Students/PostGetStudent";
+            string url = "https://localhost:44307/api/Parents/PostGetParent";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             var postData = "email=" + Uri.EscapeDataString(login);
-            postData += "&passwd=" + Uri.EscapeDataString(haslo);
+            postData += "&password=" + Uri.EscapeDataString(haslo);
             var data = Encoding.ASCII.GetBytes(postData);
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
@@ -51,19 +51,15 @@ namespace Dziennik_Szkolny
                         }
                     }
                 }
-                /// Wprowadzono niepoprawne dane do logowania
-                else
-                {
-                    message = "Niepoprawne dane logowania";
-                    MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    strResponseValue = "-1";
-                }
             }
             catch (Exception ex)
             {
                 message = "error: " + ex.Message.ToString();
-                MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                strResponseValue = "-1";
+                if (message != "error: The remote server returned an error: (404) Not Found.")
+                {
+                    MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
             }
             finally
             {

@@ -21,9 +21,9 @@ namespace ApiREST.Controllers
         
         [HttpPost]
         [Route("PostGetStudent")]
-        public async Task<IActionResult> PostGetStudent([FromForm] string email, [FromForm] string passwd)
+        public async Task<IActionResult> PostGetStudent([FromForm] string email, [FromForm] string password)
         {
-            Students resp = await _studentsRepository.GetStudentAsync(email, passwd);
+            Students resp = await _studentsRepository.GetStudentAsync(email, password);
             
             if(resp == null)
             {
