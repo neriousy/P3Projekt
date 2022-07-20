@@ -9,6 +9,8 @@ namespace ApiREST
     {
         public Task<T> GetStudentAsync(string email, string password);
         public Task<List<T>> GetStudentsByClassAsync(Guid uuid);
+        public Task<T> GetStudentByUuidAsync(Guid uuid);
+
 
     }
 }

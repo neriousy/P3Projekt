@@ -18,30 +18,31 @@ namespace ApiREST.Controllers
         {
             _studentsRepository = studentsRepository;
         }
-        
+
         [HttpPost]
         [Route("PostGetStudent")]
-        public async Task<IActionResult> PostGetStudent([FromForm] string email, [FromForm] string password)
+        public async Task<IActionResult> PostGetStudent([FromForm] string email, [FromForm] string passwd)
         {
-            Students resp = await _studentsRepository.GetStudentAsync(email, password);
-            
-            if(resp == null)
+            Students resp = await _studentsRepository.GetStudentAsync(email, passwd);
+
+            if (resp == null)
             {
                 return NotFound(resp);
             }
             return Ok(resp);
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("GetStudentsByClass")]
-        public async Task<IActionResult> GetStudentsByclass(Guid uuid)
+        public async Task<IActionResult> GetStudentsByclass([FromForm] Guid uuid)
         {
             ICollection<Students> resp = await _studentsRepository.GetStudentsByClassAsync(uuid);
-            foreach(var Stud in resp) {
+            foreach (var Stud in resp)
+            {
                 Stud.Email = null;
                 Stud.Passwd = null;
             }
-            if(resp == null)
+            if (resp == null)
             {
                 return NotFound(resp);
             }
@@ -49,6 +50,22 @@ namespace ApiREST.Controllers
             return Ok(resp);
         }
 
+        [HttpPost]
+        [Route("GetStudentByUuid")]
+        public async Task<IActionResult> GetStudentByUuid([FromForm] Guid uuid)
+        {
+            Students resp = await _studentsRepository.GetStudentByUuidAsync(uuid);
+
+            resp.Email = null;
+            resp.Passwd = null;
+
+            if (resp == null)
+            {
+                return NotFound(resp);
+            }
+
+            return Ok(resp);
+        }
 
     }
 }

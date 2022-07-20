@@ -26,5 +26,11 @@ namespace ApiREST
             return _myContext.Students.Where(s => s.Class_id == uuid).ToListAsync();
         }
 
+        public Task<Students> GetStudentByUuidAsync(Guid uuid)
+        {
+            return _myContext.Students.Include(s => s.Parents_students).FirstOrDefaultAsync(s => s.Student_id == uuid);
+        }
+
+
     }
 }
