@@ -8,7 +8,7 @@ using System.Threading;
 
 namespace Dziennik_Szkolny
 {
-    class RestLoginParent
+    class RestLogin
     {
         /// <summary>
         /// Sprawdzenienie danych logowania
@@ -17,12 +17,11 @@ namespace Dziennik_Szkolny
         /// <param name="haslo">password</param>
         /// <returns>W przypadku powodzenia : Struktura danych użytkownika
         ///          W przypadku niepowodzenia : -1</returns>
-        public async Task<string> makeRequestLogin(string login, string haslo)
+        public async Task<string> makeRequestLogin(string login, string haslo, string url)
         {
             string message;
             string caption = "Error";
             var strResponseValue = string.Empty;
-            string url = "https://localhost:44307/api/Parents/PostGetParent";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             var postData = "email=" + Uri.EscapeDataString(login);
             postData += "&password=" + Uri.EscapeDataString(haslo);
@@ -55,11 +54,12 @@ namespace Dziennik_Szkolny
             catch (Exception ex)
             {
                 message = "error: " + ex.Message.ToString();
-                if (message != "error: The remote server returned an error: (404) Not Found.")
+                if(message != "error: The remote server returned an error: (404) Not Found.")
                 {
                     MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
+                strResponseValue = "-1";
             }
             finally
             {
@@ -71,4 +71,4 @@ namespace Dziennik_Szkolny
             return strResponseValue;
         }
     }
-}
+}   

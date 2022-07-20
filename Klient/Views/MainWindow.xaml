@@ -12,12 +12,12 @@
         <Storyboard x:Key="showMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="sideMenu">
                 <EasingDoubleKeyFrame KeyTime="0" Value="69"></EasingDoubleKeyFrame>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.15" Value="300"></EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.15" Value="170"></EasingDoubleKeyFrame>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="hideMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="sideMenu">
-                <EasingDoubleKeyFrame KeyTime="0" Value="300"></EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0" Value="170"></EasingDoubleKeyFrame>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.15" Value="69"></EasingDoubleKeyFrame>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
@@ -52,44 +52,52 @@
         </Grid>
         <Grid x:Name="sideMenu" Width="69" HorizontalAlignment="Left" Background="DarkSlateGray">
             <StackPanel>
-                <Grid Height="200" Background="White">
+                <Grid Height="60" Background="White">
                     <Button x:Name="hideMenuButton" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right"
                             Click="hideMenuButton_Click" Visibility="Collapsed">
                         <materialDesign:PackIcon Foreground="DarkSlateGray" Width="27"  Height="27" Kind="ArrowLeft"></materialDesign:PackIcon>
                     </Button>
                     <Button x:Name="showMenuButton" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right"
                             Click="showMenuButton_Click">
-                        <materialDesign:PackIcon Foreground="DarkSlateGray" Width="27"  Height="27" Kind="Menu"></materialDesign:PackIcon>
+                        <materialDesign:PackIcon Foreground="DarkSlateGray" Width="27"  Height="27" Kind="Menu" Margin="0,0,10,0"></materialDesign:PackIcon>
                     </Button>
                 </Grid>
                 <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                    <ListViewItem Height="69" Foreground="Azure">
+                    <ListViewItem Height="69" Foreground="Azure" Selected="Plan_Selected">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="ViewDashboard" Height="27" Width="27" VerticalAlignment="Center" Margin="17"></materialDesign:PackIcon>
-                            <TextBlock Text="Plan zajęć" VerticalAlignment="Center" Margin="20 17"></TextBlock>
+                            <materialDesign:PackIcon Kind="ViewDashboard" Height="27" Width="27" VerticalAlignment="Center" Margin="15"></materialDesign:PackIcon>
+                            <TextBlock Text="Plan zajęć" VerticalAlignment="Center" Margin="15,12,20,17"></TextBlock>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="69" Foreground="Azure">
+                    <ListViewItem Height="69" Foreground="Azure" Selected="Oceny_Selected">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="ViewDashboard" Height="27" Width="27" VerticalAlignment="Center" Margin="17"></materialDesign:PackIcon>
+                            <materialDesign:PackIcon Kind="Grade" Height="27" Width="27" VerticalAlignment="Center" Margin="15"></materialDesign:PackIcon>
                             <TextBlock Text="Oceny" VerticalAlignment="Center" Margin="20 17"></TextBlock>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="69" Foreground="Azure">
+                    <ListViewItem Height="69" Foreground="Azure" Selected="Szczegoly_Selected">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Pencil" Height="27" Width="27" VerticalAlignment="Center" Margin="17"></materialDesign:PackIcon>
+                            <materialDesign:PackIcon Kind="Grade"  Height="27" Width="27" VerticalAlignment="Center" Margin="15"></materialDesign:PackIcon>
+                            <TextBlock Text="Szczegóły ocen" VerticalAlignment="Center" Margin="5,17,20,17"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="69" Foreground="Azure" Selected="Uwagi_Selected">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Pencil" Height="27" Width="27" VerticalAlignment="Center" Margin="15"></materialDesign:PackIcon>
                             <TextBlock Text="Uwagi" VerticalAlignment="Center" Margin="20 17"></TextBlock>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="69" Foreground="Azure">
+                    <ListViewItem Height="69" Foreground="Azure" Selected="Obecnosci_Selected">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Ticket" Height="27" Width="27" VerticalAlignment="Center" Margin="17"></materialDesign:PackIcon>
-                            <TextBlock Text="Obecności" VerticalAlignment="Center" Margin="20 17"></TextBlock>
+                            <materialDesign:PackIcon Kind="Ticket" Height="27" Width="27" VerticalAlignment="Center" Margin="15"></materialDesign:PackIcon>
+                            <TextBlock Text="Obecności" VerticalAlignment="Center" Margin="15,17,20,17"></TextBlock>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
             </StackPanel>
         </Grid>
-        <TextBlock x:Name="body" HorizontalAlignment="Center" Margin="0,107,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="614" Width="1005" IsEnabled="False" Foreground="Black"/>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" Margin="179,93,31,34">
+            <TextBlock x:Name="body" TextWrapping="Wrap" Text="TextBlock" Height="631" Width="996" Foreground="Black" IsEnabled="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" FlowDirection="LeftToRight"/>
+        </ScrollViewer>
     </Grid>
 </Window>

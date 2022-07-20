@@ -8,24 +8,15 @@ using System.Threading;
 
 namespace Dziennik_Szkolny
 {
-    class RestLoginTeacher
+    class RestFunction
     {
-        /// <summary>
-        /// Sprawdzenienie danych logowania
-        /// </summary>
-        /// <param name="login">email</param>
-        /// <param name="haslo">password</param>
-        /// <returns>W przypadku powodzenia : Struktura danych użytkownika
-        ///          W przypadku niepowodzenia : -1</returns>
-        public async Task<string> makeRequestLogin(string login, string haslo)
+        public async Task<string> makeRequestFunction(string uuid, string url)
         {
             string message;
             string caption = "Error";
             var strResponseValue = string.Empty;
-            string url = "https://localhost:44307/api/Teachers/PostGetTeacher";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            var postData = "email=" + Uri.EscapeDataString(login);
-            postData += "&password=" + Uri.EscapeDataString(haslo);
+            var postData = "uuid=" + Uri.EscapeDataString(uuid);
             var data = Encoding.ASCII.GetBytes(postData);
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
@@ -58,8 +49,9 @@ namespace Dziennik_Szkolny
                 if (message != "error: The remote server returned an error: (404) Not Found.")
                 {
                     MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                    strResponseValue = "-2";
                 }
+                
             }
             finally
             {

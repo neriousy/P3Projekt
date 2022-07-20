@@ -46,41 +46,35 @@ namespace Dziennik_Szkolny
         private async void loginButton_Click(object sender, RoutedEventArgs e)
         {
             string message;
-            string caption = "Error";
-            char type;
-            RestLoginStudent clientStudent = new RestLoginStudent();
-            RestLoginParent clientParent = new RestLoginParent();
-            RestLoginTeacher clientTeacher = new RestLoginTeacher();
-            string result = await clientStudent.makeRequestLogin(userInputtedUsername.Text, userInputtedPassword.Password.ToString());
+            string caption = "Error";            
+            RestLogin login = new RestLogin();
+            string result = await login.makeRequestLogin(userInputtedUsername.Text, userInputtedPassword.Password.ToString(), "https://localhost:44307/api/Students/PostGetStudent");
             if (result != "-1")
             {
-                type = 's';
                 MainWindow mainWindow = new MainWindow();
                 this.Hide();
                 mainWindow.Show();
-                mainWindow.startStud(result, type);
+                mainWindow.startStud(result);
             }
             else
             {
-                result = await clientParent.makeRequestLogin(userInputtedUsername.Text, userInputtedPassword.Password.ToString());
+                result = await login.makeRequestLogin(userInputtedUsername.Text, userInputtedPassword.Password.ToString(), "https://localhost:44307/api/Parents/PostGetParent");
                 if (result != "-1")
                 {
-                    type = 'r';
                     MainWindow mainWindow = new MainWindow();
                     this.Hide();
                     mainWindow.Show();
-                    mainWindow.startPar(result, type);
+                    mainWindow.startPar(result);
                 }
                 else
                 {
-                    result = await clientTeacher.makeRequestLogin(userInputtedUsername.Text, userInputtedPassword.Password.ToString());
+                    result = await login.makeRequestLogin(userInputtedUsername.Text, userInputtedPassword.Password.ToString(), "https://localhost:44307/api/Teachers/PostGetTeacher");
                     if (result != "-1")
                     {
-                        type = 'n';
                         MainWindow mainWindow = new MainWindow();
                         this.Hide();
                         mainWindow.Show();
-                        //mainWindow.startStud(result, type);
+                        //mainWindow.startStud(result);
                     }
                     /// Wprowadzono niepoprawne dane do logowania
                     else

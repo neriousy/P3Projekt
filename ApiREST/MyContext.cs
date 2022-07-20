@@ -44,15 +44,15 @@ namespace ApiREST
             modelBuilder.Entity<Parents_students>().HasOne(pu => pu.Student).WithMany(s => s.Parents_students).HasForeignKey(pu => pu.Student_id);
             modelBuilder.Entity<Parents_students>().HasOne(pu => pu.Parent).WithMany(s => s.Parents_students).HasForeignKey(pu => pu.Parent_id);
 
-            modelBuilder.Entity<Students>().Navigation(s => s.Grades).AutoInclude();
+            //modelBuilder.Entity<Students>().Navigation(s => s.Grades).AutoInclude();
             //modelBuilder.Entity<Grades>().Navigation(g => g.Subjects).AutoInclude();
             //modelBuilder.Entity<Grades>().Navigation(g => g.Teachers).AutoInclude();
-            modelBuilder.Entity<Students>().Navigation(s => s.Classes).AutoInclude();
+            //modelBuilder.Entity<Students>().Navigation(s => s.Classes).AutoInclude();
             modelBuilder.Entity<Lesson_plan>().Navigation(l => l.Subjects).AutoInclude();
             modelBuilder.Entity<Classes>().Navigation(c => c.Lesson_Plan).AutoInclude();
 
-            modelBuilder.Entity<Parents_students>().Navigation(p => p.Parent).AutoInclude();
-            modelBuilder.Entity<Parents_students>().Navigation(s => s.Student).AutoInclude();
+            //modelBuilder.Entity<Parents_students>().Navigation(p => p.Parent).AutoInclude();
+            //modelBuilder.Entity<Parents_students>().Navigation(s => s.Student).AutoInclude();
 
         }
     }

@@ -19,13 +19,13 @@ namespace ApiREST.Controllers
         }
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("GetStudentWarnings")]
-        public async Task<IActionResult> GetStudentWarnings(Guid uuid)
+        public async Task<IActionResult> GetStudentWarnings([FromForm] Guid uuid)
         {
             ICollection<Warnings> resp = await _warningsRepository.GetStudentWarningsAsync(uuid);
 
-            if(resp == null)
+            if (resp == null)
             {
                 return NotFound(resp);
             }
