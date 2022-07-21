@@ -9,6 +9,6 @@ namespace ApiREST
     public interface ILessonPlanRepository<T>
     {
         public Task<List<T>> GetLessonPlanByClassId(Guid uuid);
-        public Task<List<T>> GetUniqueSubjectsByClassId(Guid uuid);
+        public Task<List<Guid>> GetUniqueSubjectsByClassId(Guid uuid);
     }
 }

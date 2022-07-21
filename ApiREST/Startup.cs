@@ -40,6 +40,7 @@ namespace ApiREST
             services.AddScoped<ITeacherRepository<Teachers>, TeacherRepository>();
             services.AddScoped<ILessonsRepository<Lessons>, LessonsRepository>();
             services.AddScoped<ISubjectsRepository<Subjects>, SubjectsRepository>();
+            services.AddScoped<ILessonPlanRepository<Lesson_plan>, LessonPlanRepository>();
 
             services.AddSwaggerGen(c =>
             { 

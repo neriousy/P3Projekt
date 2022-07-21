@@ -20,9 +20,9 @@ namespace ApiREST
             return _myContext.Lesson_plan.Where(l => l.Class_id == uuid).ToListAsync();
         }
 
-        public Task<List<Lesson_plan>> GetUniqueSubjectsByClassId(Guid uuid)
+        public Task<List<Guid>> GetUniqueSubjectsByClassId(Guid uuid)
         {
-            return _myContext.Lesson_plan.Where(l => l.Class_id == uuid).Distinct().ToListAsync();
+            return _myContext.Lesson_plan.Where(l => l.Class_id == uuid).Select(l => l.Subject_id).Distinct().ToListAsync();
         }
     }
 }

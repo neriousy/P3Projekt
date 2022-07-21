@@ -36,7 +36,7 @@ namespace ApiREST.Controllers
         [Route("GetUniqueSubjectsByClassId")]
         public async Task<IActionResult> GetUniqueSubjectsByClassId(Guid uuid)
         {
-            IEnumerable<Lesson_plan> resp = await _lessonPlanRepository.GetUniqueSubjectsByClassId(uuid);
+            ICollection<Guid> resp = await _lessonPlanRepository.GetUniqueSubjectsByClassId(uuid);
 
             if(resp == null)
             {
