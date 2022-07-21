@@ -51,6 +51,10 @@ namespace Dziennik_Szkolny
                     MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     strResponseValue = "-2";
                 }
+                else
+                {
+                    strResponseValue = "-1";
+                }
                 
             }
             finally

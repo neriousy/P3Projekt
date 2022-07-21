@@ -22,7 +22,7 @@ namespace ApiREST.Controllers
         [Route("GetLessonPlanByClassId")]
         public async Task<IActionResult> GetLessonPlanByClassId([FromForm] Guid uuid)
         {
-            IEnumerable<Lesson_plan> resp = await _lessonPlanRepository.GetLessonPlanByClassId(uuid);
+            ICollection<Lesson_plan> resp = await _lessonPlanRepository.GetLessonPlanByClassId(uuid);
 
             if(resp == null)
             {
@@ -36,6 +36,7 @@ namespace ApiREST.Controllers
         [Route("GetUniqueSubjectsByClassId")]
         public async Task<IActionResult> GetUniqueSubjectsByClassId([FromForm] Guid uuid)
         {
+
             ICollection<Guid> resp = await _lessonPlanRepository.GetUniqueSubjectsByClassId(uuid);
 
             if(resp == null)

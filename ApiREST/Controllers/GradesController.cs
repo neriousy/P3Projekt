@@ -30,7 +30,7 @@ namespace ApiREST.Controllers
             return oceny != null ? Ok(oceny) : NotFound(oceny);
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("GetGradesSubject")]
         public async Task<IActionResult> GetGradesSubject([FromForm] Guid uuid)
         {

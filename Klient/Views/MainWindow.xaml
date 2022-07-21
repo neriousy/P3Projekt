@@ -41,7 +41,7 @@
 
                 <materialDesign:PopupBox  Margin="7" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" >
                     <StackPanel Width="300">
-                        <Button x:Name="helpButton" Content="Pomoc"/>
+                        <Button x:Name="info" Content="Informacje" Click="info_Click"/>
                         <Button x:Name="logoutButton" Content="Wyloguj" Click="logoutButton_Click"/>
                         <Separator/>
                         <Button x:Name="exitButton" Content="Wyjdź z aplikacji" Click="exitButton_Click"/>
@@ -75,12 +75,6 @@
                             <TextBlock Text="Oceny" VerticalAlignment="Center" Margin="20 17"></TextBlock>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="69" Foreground="Azure" Selected="Szczegoly_Selected">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Grade"  Height="27" Width="27" VerticalAlignment="Center" Margin="15"></materialDesign:PackIcon>
-                            <TextBlock Text="Szczegóły ocen" VerticalAlignment="Center" Margin="5,17,20,17"></TextBlock>
-                        </StackPanel>
-                    </ListViewItem>
                     <ListViewItem Height="69" Foreground="Azure" Selected="Uwagi_Selected">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Pencil" Height="27" Width="27" VerticalAlignment="Center" Margin="15"></materialDesign:PackIcon>
@@ -96,12 +90,25 @@
                 </ListView>
             </StackPanel>
         </Grid>
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" Margin="179,93,31,34">
-            <TextBlock x:Name="body" TextWrapping="Wrap" Text="TextBlock" Height="631" Width="996" Foreground="Black" IsEnabled="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" FlowDirection="LeftToRight"/>
+        <ScrollViewer x:Name="bodyShow" HorizontalScrollBarVisibility="Auto" Margin="179,93,31,34" Panel.ZIndex="0">
+            <TextBlock x:Name="body" TextWrapping="Wrap" Text="TextBlock" Height="631" Width="996" Foreground="Black" IsEnabled="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" FlowDirection="LeftToRight" Panel.ZIndex="0"/>
         </ScrollViewer>
-        <Grid x:Name="Wybor_przedmiotu" Visibility="Hidden">
-            <ComboBox HorizontalAlignment="Left" Margin="310,62,0,0" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Wybierz przedmiot" HorizontalAlignment="Left" Margin="178,63,0,0" VerticalAlignment="Top"/>
+        <ScrollViewer x:Name="ocenyShow" Visibility="Hidden" HorizontalScrollBarVisibility="Auto" Margin="179,93,31,34" Panel.ZIndex="0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="nazwaPrzed" TextWrapping="Wrap" Height="631" Width="302" Foreground="Black" IsEnabled="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" FlowDirection="LeftToRight" Panel.ZIndex="0"/>
+                <TextBlock x:Name="ocenyWysw" TextWrapping="Wrap" Height="631" Width="694" Foreground="Black" IsEnabled="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" FlowDirection="LeftToRight" Panel.ZIndex="0"/>
+            </StackPanel>
+
+        </ScrollViewer>
+        <Grid x:Name="Wybór_ocen" Visibility="Hidden" Margin="179 0 0 600" Panel.ZIndex="0">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="wyswOceny" Width="150" Background="DarkSlateGray" Content="Oceny" BorderBrush="{x:Null}" Click="wyswOceny_Click"/>
+                <Button x:Name="wyswSzczegoly" Width="150" Background="DarkSlateGray" Content="Szczegóły ocen" BorderBrush="{x:Null}" Click="wyswSzczegoly_Click"/>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="Wybor_przedmiotu" Visibility="Hidden" Panel.ZIndex="10">
+            <ComboBox x:Name="wybierzPrzedmiot"  HorizontalAlignment="Left" Margin="310,119,0,0" VerticalAlignment="Top" Width="200" Panel.ZIndex="10" SelectionChanged="wybierzPrzedmiot_SelectionChanged"/>
+            <Label Content="Wybierz przedmiot" HorizontalAlignment="Left" Margin="186,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.136,0.57" Panel.ZIndex="9"/>
         </Grid>
     </Grid>
 </Window>

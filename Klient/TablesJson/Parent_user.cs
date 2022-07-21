@@ -6,10 +6,10 @@ namespace Dziennik_Szkolny
 {
     public class Parents_students
     {
-        public Guid Student_id { get; set; }
-        public Students Student { get; set; }
-        public Guid Parent_id { get; set; }
-        public Parents Parent { get; set; }
+        public Guid student_id { get; set; }
+        public Students student { get; set; }
+        public Guid parent_id { get; set; }
+        public Parents parent { get; set; }
 
     }
 }

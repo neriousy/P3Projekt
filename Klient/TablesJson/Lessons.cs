@@ -1,24 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 namespace Dziennik_Szkolny
 {
     public class Lessons
     {
-        [Key]
-        [Required]
-        [Index(IsUnique = true)]
-        public Guid Lesson_id { get; set; }
-        public Guid Subject_id { get; set; }
-        public Subjects Subjects { get; set; }
-        public Guid Class_id { get; set; }
-        public Classes Classes { get; set; }
-        public Guid Teacher_id { get; set; }
-        public Teachers Teachers { get; set; }
-        public DateTime Start_time { get; set; }
-
-        [ForeignKey("lesson_id")]
+        public Guid lesson_id { get; set; }
+        public Guid subject_id { get; set; }
+        public Subjects subjects { get; set; }
+        public Guid class_id { get; set; }
+        public Classes classes { get; set; }
+        public Guid teacher_id { get; set; }
+        public Teachers teachers { get; set; }
+        public DateTime start_time { get; set; }
         public ICollection<Attendance> Attendances { get; set; }
 
     }
