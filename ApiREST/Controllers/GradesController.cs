@@ -20,9 +20,9 @@ namespace ApiREST.Controllers
             _gradesRepository = gradesRepository;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("GetGradesStudent")]
-        public async Task<IActionResult> GetGradesStudent(Guid uuid)
+        public async Task<IActionResult> GetGradesStudent([FromForm] Guid uuid)
         {
             ICollection<Grades> oceny = await _gradesRepository.GetGradesStudent(uuid);
             //IEnumerable<Grades> selection = oceny.Select(g => new Grades {Grade = g.Grade, Weight = g.Weight, Grade_id = g.Grade_id, Date = g.Date, Desc = g.Desc, Subjects = g.Subjects, Teachers = g.Teachers});
