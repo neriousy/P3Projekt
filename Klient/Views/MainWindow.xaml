@@ -99,5 +99,9 @@
         <ScrollViewer HorizontalScrollBarVisibility="Auto" Margin="179,93,31,34">
             <TextBlock x:Name="body" TextWrapping="Wrap" Text="TextBlock" Height="631" Width="996" Foreground="Black" IsEnabled="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" FlowDirection="LeftToRight"/>
         </ScrollViewer>
+        <Grid x:Name="Wybor_przedmiotu" Visibility="Hidden">
+            <ComboBox HorizontalAlignment="Left" Margin="310,62,0,0" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Wybierz przedmiot" HorizontalAlignment="Left" Margin="178,63,0,0" VerticalAlignment="Top"/>
+        </Grid>
     </Grid>
 </Window>

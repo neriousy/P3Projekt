@@ -105,7 +105,7 @@ namespace Dziennik_Szkolny
 
         private async void Oceny_Selected(object sender, RoutedEventArgs e)
         {
-
+            Wybor_przedmiotu.Visibility = Visibility.Hidden;
             RestFunction grades = new RestFunction();
             string result = await grades.makeRequestFunction(stud.student_id.ToString(), "https://localhost:44307/api/Grades/GetGradesStudent");
             if (result != "-2")
@@ -142,7 +142,7 @@ namespace Dziennik_Szkolny
 
         private void Szczegoly_Selected(object sender, RoutedEventArgs e)
         {
-
+            Wybor_przedmiotu.Visibility = Visibility.Visible;
         }
 
         private async void Uwagi_Selected(object sender, RoutedEventArgs e)
