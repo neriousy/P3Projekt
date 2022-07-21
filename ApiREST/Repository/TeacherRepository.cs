@@ -19,5 +19,10 @@ namespace ApiREST
         {
             return _myContext.Teachers.FirstOrDefaultAsync(t => (t.Email == email && t.Passwd == password));
         }
+
+        public Task<Teachers> GetTeacherNameByUuidAsync(Guid uuid)
+        {
+            return _myContext.Teachers.FirstOrDefaultAsync(t => t.Teacher_id == uuid);
+        }
     }
 }

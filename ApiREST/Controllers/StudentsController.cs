@@ -21,9 +21,9 @@ namespace ApiREST.Controllers
 
         [HttpPost]
         [Route("PostGetStudent")]
-        public async Task<IActionResult> PostGetStudent([FromForm] string email, [FromForm] string passwd)
+        public async Task<IActionResult> PostGetStudent([FromForm] string email, [FromForm] string password)
         {
-            Students resp = await _studentsRepository.GetStudentAsync(email, passwd);
+            Students resp = await _studentsRepository.GetStudentAsync(email, password);
 
             if (resp == null)
             {
@@ -65,6 +65,22 @@ namespace ApiREST.Controllers
             }
 
             return Ok(resp);
+        }
+
+        [HttpPost]
+        [Route("GetStudenNameByUuid")]
+        public async Task<IActionResult> GetStudentNameByUuid([FromForm] Guid uuid)
+        {
+            Students resp = await _studentsRepository.GetStudentByUuidAsync(uuid);
+            String name;
+
+            if (resp == null)
+            {
+                return NotFound(resp);
+            }
+
+            name = resp.ToString();
+            return Ok(name);
         }
 
     }
