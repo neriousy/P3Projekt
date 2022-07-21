@@ -25,7 +25,7 @@ namespace ApiREST.Controllers
         {
             ICollection<Warnings> resp = await _warningsRepository.GetStudentWarningsAsync(uuid);
 
-            if (resp == null)
+            if(resp == null)
             {
                 return NotFound(resp);
             }

@@ -8,6 +8,7 @@ namespace ApiREST
     public interface ITeacherRepository<T>
     {
         public Task<T> GetTeacherAsync(string email, string password);
+        public Task<T> GetTeacherNameByUuidAsync(Guid uuid);
 
     }
 }

@@ -31,6 +31,22 @@ namespace ApiREST.Controllers
             return Ok(resp);
         }
 
+        [HttpPost]
+        [Route("GetTeacherNameByUuid")]
+        public async Task<IActionResult> GetTeacherNameByUuid([FromForm] Guid uuid)
+        {
+            Teachers resp = await _teacherRepository.GetTeacherNameByUuidAsync(uuid);
+            String name;
+            if(resp == null)
+            {
+                return NotFound(resp);
+            }
+
+            name = resp.ToString();
+
+            return Ok(name);
+        }
+
 
     }
 }

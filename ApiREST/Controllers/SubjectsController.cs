@@ -18,7 +18,7 @@ namespace ApiREST.Controllers
             _subjectsRepository = subjectsRepository;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("GetSubject")]
         public async Task<IActionResult> GetSubject(Guid uuid)
         {
@@ -31,5 +31,22 @@ namespace ApiREST.Controllers
 
             return Ok(resp);
         }
+
+        [HttpPost]
+        [Route("GetSubjectNameByUuid")]
+        public async Task<IActionResult> GetSubjectNameByUuid(Guid uuid)
+        {
+            Subjects resp = await _subjectsRepository.GetSubjectAsync(uuid);
+            String name;
+            if(resp == null)
+            {
+                return NotFound(resp);
+            }
+
+            name = resp.Subjectname;
+            return Ok(name);
+        }
+
+
     }
 }
