@@ -225,6 +225,7 @@ namespace Dziennik_Szkolny
 
         private async void wybierzPrzedmiot_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
+            wybierzPrzedmiot.Text = wybierzPrzedmiot.SelectedValue.ToString();
             bool ocena = true;
             int i = 0;
             RestFunction question = new RestFunction();

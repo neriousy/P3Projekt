@@ -106,9 +106,9 @@
                 <Button x:Name="wyswSzczegoly" Width="150" Background="DarkSlateGray" Content="Szczegóły ocen" BorderBrush="{x:Null}" Click="wyswSzczegoly_Click"/>
             </StackPanel>
         </Grid>
-        <Grid x:Name="Wybor_przedmiotu" Visibility="Hidden" Panel.ZIndex="10">
-            <ComboBox x:Name="wybierzPrzedmiot"  HorizontalAlignment="Left" Margin="310,119,0,0" VerticalAlignment="Top" Width="200" Panel.ZIndex="10" SelectionChanged="wybierzPrzedmiot_SelectionChanged"/>
-            <Label Content="Wybierz przedmiot" HorizontalAlignment="Left" Margin="186,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.136,0.57" Panel.ZIndex="9"/>
+        <Grid x:Name="Wybor_przedmiotu" Panel.ZIndex="10">
+            <ComboBox x:Name="wybierzPrzedmiot"  HorizontalAlignment="Left" Margin="310,119,0,0" VerticalAlignment="Top" Width="200" Panel.ZIndex="10"  SelectionChanged="wybierzPrzedmiot_SelectionChanged" AutomationProperties.LabeledBy="{Binding ElementName=label, Mode=OneWay}" IsSynchronizedWithCurrentItem="True" Foreground="Black"/>
+            <Label x:Name="label" Content="Wybierz przedmiot" HorizontalAlignment="Left" Margin="186,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.136,0.57" Panel.ZIndex="9"/>
         </Grid>
     </Grid>
 </Window>
