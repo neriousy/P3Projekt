@@ -20,7 +20,7 @@ namespace ApiREST.Controllers
             _lessonsRepository = lessonsRepository;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("GetLesson")]
         public async Task<IActionResult> GetLesson([FromForm] Guid uuid)
         {

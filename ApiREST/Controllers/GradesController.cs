@@ -20,7 +20,7 @@ namespace ApiREST.Controllers
             _gradesRepository = gradesRepository;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("GetGradesStudent")]
         public async Task<IActionResult> GetGradesStudent(Guid uuid)
         {
