@@ -32,7 +32,7 @@ namespace ApiREST.Controllers
 
         [HttpGet]
         [Route("GetGradesSubject")]
-        public async Task<IActionResult> GetGradesSubject(Guid uuid)
+        public async Task<IActionResult> GetGradesSubject([FromForm] Guid uuid)
         {
             ICollection<Grades> oceny = await _gradesRepository.GetGradesSubject(uuid);
 

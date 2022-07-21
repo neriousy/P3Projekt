@@ -20,7 +20,7 @@ namespace ApiREST.Controllers
 
         [HttpPost]
         [Route("GetSubject")]
-        public async Task<IActionResult> GetSubject(Guid uuid)
+        public async Task<IActionResult> GetSubject([FromForm] Guid uuid)
         {
             Subjects resp = await _subjectsRepository.GetSubjectAsync(uuid);
 
@@ -34,7 +34,7 @@ namespace ApiREST.Controllers
 
         [HttpPost]
         [Route("GetSubjectNameByUuid")]
-        public async Task<IActionResult> GetSubjectNameByUuid(Guid uuid)
+        public async Task<IActionResult> GetSubjectNameByUuid([FromForm] Guid uuid)
         {
             Subjects resp = await _subjectsRepository.GetSubjectAsync(uuid);
             String name;
