@@ -3,7 +3,12 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dziennik_Szkolny
-{ 
+{
+
+    /// <summary>
+    /// Klasa przechowująca kolekcje obiektów do deserializacji otrzymanych danych
+    /// </summary>
+
     public class Grades
     {
         public Guid Grade_id { get; set; }

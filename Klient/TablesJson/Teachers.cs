@@ -5,31 +5,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dziennik_Szkolny
 {
+
+    /// <summary>
+    /// Klasa przechowująca kolekcje obiektów do deserializacji otrzymanych danych
+    /// </summary>
+
     public class Teachers
     {
-        [Key]
-        [Required]
-        [Index(IsUnique = true)]
         public Guid Teacher_id { get; set; }
-
-        [MinLength(2), MaxLength(20)]
         public string Name { get; set; }
-
-        [MinLength(2), MaxLength(40)]
         public string Surname { get; set; }
         public string Email { get; set; }
         public string Passwd { get; set; }
-
-        [ForeignKey("teacher_id")]
         public ICollection<Lessons> Lessons { get; set; }
-
-        [ForeignKey("teacher_id")]
         public ICollection<Grades> Grades { get; set; }
-
-        [ForeignKey("teacher_id")]
         public ICollection<Warnings> Warnings { get; set; }
-
-        [NotMapped]
         public string Dane
         {
             get

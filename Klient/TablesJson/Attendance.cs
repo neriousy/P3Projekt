@@ -4,11 +4,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dziennik_Szkolny
 {
+
+    /// <summary>
+    /// Klasa przechowująca kolekcje obiektów do deserializacji otrzymanych danych
+    /// </summary>
+
     public class Attendance
     {
-        [Key]
-        [Required]
-        [Index(IsUnique = true)]
         public Guid Attendance_id { get; set; }
         public DateTime Date { get; set; }
         public string IsPresent { get; set; }

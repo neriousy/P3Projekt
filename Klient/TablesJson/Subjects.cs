@@ -3,6 +3,11 @@ using System.Collections.Generic;
 
 namespace Dziennik_Szkolny
 {
+
+    /// <summary>
+    /// Klasa przechowująca kolekcje obiektów do deserializacji otrzymanych danych
+    /// </summary>
+
     public class Subjects
     {
         public Guid Subject_id { get; set; }
