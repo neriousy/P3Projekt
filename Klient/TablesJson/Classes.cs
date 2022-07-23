@@ -5,11 +5,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dziennik_Szkolny
 {
+
+    /// <summary>
+    /// Klasa przechowująca kolekcje obiektów do deserializacji otrzymanych danych
+    /// </summary>
+
     public class Classes
     {
-        [Key]
-        [Required]
-        [Index(IsUnique = true)]
         public Guid Class_id { get; set; }
         public int StartYear { get; set; }
         public string Course { get; set; }
@@ -18,7 +20,6 @@ namespace Dziennik_Szkolny
         public ICollection<Lessons> Lessons { get; set; }
 
         public ICollection<Lesson_plan> Lesson_Plan { get; set; }
-        [NotMapped]
         public string Opis
         {
             get

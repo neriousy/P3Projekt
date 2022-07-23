@@ -106,9 +106,61 @@
                 <Button x:Name="wyswSzczegoly" Width="150" Background="DarkSlateGray" Content="Szczegóły ocen" BorderBrush="{x:Null}" Click="wyswSzczegoly_Click"/>
             </StackPanel>
         </Grid>
-        <Grid x:Name="Wybor_przedmiotu" Panel.ZIndex="10">
+        <Grid x:Name="Wybor_przedmiotu" Visibility="Hidden" Panel.ZIndex="10">
             <ComboBox x:Name="wybierzPrzedmiot"  HorizontalAlignment="Left" Margin="310,119,0,0" VerticalAlignment="Top" Width="200" Panel.ZIndex="10"  SelectionChanged="wybierzPrzedmiot_SelectionChanged" AutomationProperties.LabeledBy="{Binding ElementName=label, Mode=OneWay}" IsSynchronizedWithCurrentItem="True" Foreground="Black"/>
             <Label x:Name="label" Content="Wybierz przedmiot" HorizontalAlignment="Left" Margin="186,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.136,0.57" Panel.ZIndex="9"/>
         </Grid>
+        <DataGrid Visibility="Hidden" AutoGenerateColumns="False" Margin="179,93,0,0" HorizontalAlignment="Center" x:Name="planZajec" VerticalAlignment="Center" Height="650" Width="1024" Background="{x:Null}" IsEnabled="False" FontSize="12">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=Godziny}" Width="170" Foreground="Black">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Poniedzialek}" Width="170" Foreground="Black">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Wtorek}" Width="170" Foreground="Black">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Sroda}" Width="170" Foreground="Black">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Czwartek}" Width="170" Foreground="Black">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Piatek}" Width="170" Foreground="Black">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
