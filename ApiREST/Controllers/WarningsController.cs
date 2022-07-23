@@ -18,7 +18,11 @@ namespace ApiREST.Controllers
             _warningsRepository = warningsRepository;
         }
 
-
+        /// <summary>
+        /// Pobierz uwagi ucznia
+        /// </summary>
+        /// <param name="uuid">Uuid ucznia</param>
+        /// <returns>Zwraca liste uwag ucznia (kod 200) lub kod 404 przy niepoprawnym uuid</returns>
         [HttpPost]
         [Route("GetStudentWarnings")]
         public async Task<IActionResult> GetStudentWarnings([FromForm] Guid uuid)

@@ -17,7 +17,11 @@ namespace ApiREST.Controllers
         {
             _subjectsRepository = subjectsRepository;
         }
-
+        /// <summary>
+        /// Pobierz przedmiot
+        /// </summary>
+        /// <param name="uuid">Uuid przedmiotu</param>
+        /// <returns>Zwraca obiekt Subjects (kod 200) lub 404 przy niepoprawnym uuid</returns>
         [HttpPost]
         [Route("GetSubject")]
         public async Task<IActionResult> GetSubject([FromForm] Guid uuid)
@@ -31,7 +35,11 @@ namespace ApiREST.Controllers
 
             return Ok(resp);
         }
-
+        /// <summary>
+        /// Pobierz nazwe przedmiotu za pomoca uuid
+        /// </summary>
+        /// <param name="uuid">Uuid przedmiotu</param>
+        /// <returns>Zwraca nazwe przedmiotu (kod 200) lub 404 przy niepoprawnym uuid</returns>
         [HttpPost]
         [Route("GetSubjectNameByUuid")]
         public async Task<IActionResult> GetSubjectNameByUuid([FromForm] Guid uuid)

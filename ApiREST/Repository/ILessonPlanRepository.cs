@@ -10,5 +10,6 @@ namespace ApiREST
     {
         public Task<List<T>> GetLessonPlanByClassId(Guid uuid);
         public Task<List<Guid>> GetUniqueSubjectsByClassId(Guid uuid);
+        public Task<List<T>> GetLessonPlanForTheDay(Guid uuid, int day);
     }
 }

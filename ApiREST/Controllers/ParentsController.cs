@@ -17,13 +17,26 @@ namespace ApiREST.Controllers
         {
             _parentsRepository = parentsRepository;
         }
-
+        /// <summary>
+        /// Zaloguj sie do rodzica
+        /// </summary>
+        /// <param name="email">Email rodzica</param>
+        /// <param name="password">Haslo rodzica</param>
+        /// <returns>Zwraca obiekt rodzica przy poprawnych danych. Zwraca kod 404 przy niepoprawnych danych</returns>
         [HttpPost]
         [Route("PostGetParent")]
         public async Task<IActionResult> GetParent([FromForm] string email, [FromForm] string password)
         {
             Parents parent = await _parentsRepository.GetParentAsync(email, password);
-            return parent != null ? Ok(parent) : NotFound(parent);
+            if(parent == null)
+            {
+                return NotFound(parent);
+            }
+
+            parent.Passwd = null;
+            parent.Email = null;
+
+            return Ok(parent);
         }
     }
 }

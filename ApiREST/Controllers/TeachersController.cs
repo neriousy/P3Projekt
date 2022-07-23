@@ -17,7 +17,12 @@ namespace ApiREST.Controllers
         {
             _teacherRepository = teacherRepository;
         }
-
+        /// <summary>
+        /// Zaloguj sie do nauczyciela
+        /// </summary>
+        /// <param name="email">Email nauczyciela</param>
+        /// <param name="password">Haslo nauczyciela</param>
+        /// <returns>Zwraca obiekt nauczyciela (kod 200) lub 404 przy niepoprawnych danych</returns>
         [HttpPost]
         [Route("PostGetTeacher")]
         public async Task<IActionResult> PostGetTeacher([FromForm] string email, [FromForm] string password)
@@ -28,9 +33,16 @@ namespace ApiREST.Controllers
             {
                 return NotFound(resp);
             }
+
+            resp.Passwd = null;
+            resp.Email = null;
             return Ok(resp);
         }
-
+        /// <summary>
+        /// Pobierz imie naucyzciela
+        /// </summary>
+        /// <param name="uuid">Uuid nauczyciela</param>
+        /// <returns>Zwraca imie nauczyciela (kod 200) lub kod 404 przy niepoprawnym uuid</returns>
         [HttpPost]
         [Route("GetTeacherNameByUuid")]
         public async Task<IActionResult> GetTeacherNameByUuid([FromForm] Guid uuid)

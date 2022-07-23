@@ -14,7 +14,12 @@ namespace ApiREST
         {
             _myContext = context;
         }
-
+        
+        /// <summary>
+        /// Pobierz uwagi studenta przy pomocy jego uuid
+        /// </summary>
+        /// <param name="uuid">Uuid studenta</param>
+        /// <returns>Zwraca liste uwag studenta lub null</returns>
         public Task<List<Warnings>> GetStudentWarningsAsync(Guid uuid)
         {
             return _myContext.Warnings.Where(w => w.Student_id == uuid).ToListAsync();

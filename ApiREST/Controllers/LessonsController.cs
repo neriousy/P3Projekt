@@ -19,7 +19,11 @@ namespace ApiREST.Controllers
         {
             _lessonsRepository = lessonsRepository;
         }
-
+        /// <summary>
+        /// Popbierz lekcje za pomoca uuid
+        /// </summary>
+        /// <param name="uuid">Uuid lekcji</param>
+        /// <returns>Zwraca obiekt lekcji lub 404 przy niepoprawnym uuid</returns>
         [HttpPost]
         [Route("GetLesson")]
         public async Task<IActionResult> GetLesson([FromForm] Guid uuid)
@@ -28,7 +32,14 @@ namespace ApiREST.Controllers
 
             return lessons != null ? Ok(lessons) : NotFound(lessons);
         }
-
+        /// <summary>
+        /// Wstaw lekcje
+        /// </summary>
+        /// <param name="Subject_id">Uuid przedmiotu</param>
+        /// <param name="Class_id">Uuid klasy</param>
+        /// <param name="Teacher_id">Uuid nauczyciela</param>
+        /// <param name="Topic">Temat</param>
+        /// <returns>Zwraca uuid lekcji lub lub 400 przy niepoprawnych danych</returns>
         [HttpPost]
         [Route("InsertLesson")]
         public async Task<IActionResult> InsertLesson([FromForm] Guid Subject_id, [FromForm] Guid Class_id, [FromForm] Guid Teacher_id, [FromForm] string Topic)
@@ -43,7 +54,15 @@ namespace ApiREST.Controllers
 
             return BadRequest();
         }
-
+        /// <summary>
+        /// Edytuj lekcje
+        /// </summary>
+        /// <param name="uuid">Uuid lekcji ktora chcemy edytowac</param>
+        /// <param name="Subject_id">Uuid przedmiotu</param>
+        /// <param name="Class_id">Uuid klasy</param>
+        /// <param name="Teacher_id">Uuid nauczyciela ktory stworzyl lekcje</param>
+        /// <param name="Topic">Temaat</param>
+        /// <returns>Zwraca kod 204 przy poprawnej zmianie. Kod 404 przy niepoprawnym uuid. Kod 401 przy niepoprawnym uuid nauczyciela</returns>
         [HttpPut]
         [Route("EditLesson")]
         public async Task<IActionResult> EditLesson([FromForm] Guid uuid, [FromForm] Guid Subject_id, [FromForm] Guid Class_id, [FromForm] Guid Teacher_id, [FromForm] string Topic)
@@ -60,7 +79,11 @@ namespace ApiREST.Controllers
 
             return NoContent();
         }
-
+        /// <summary>
+        /// Usun lekcje
+        /// </summary>
+        /// <param name="uuid">Uuid lekcji</param>
+        /// <returns>Zwraca kod 200 przy poprawnym usunieciu. Kod 404 przy niepoprawnym uuid</returns>
         [HttpDelete]
         [Route("DeleteLesson")]
         public async Task<IActionResult> DeleteLesson([FromForm] Guid uuid)
