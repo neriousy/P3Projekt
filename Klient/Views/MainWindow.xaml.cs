@@ -231,27 +231,27 @@ namespace Dziennik_Szkolny
                                 if (i == 0) // Gdy dzień jest poniedziałkiem
                                 {
                                     // Wpisanie do DataGridu stosownego wpisu lekcyjnego
-                                    list[j - 7].Poniedzialek = await questionF.makeRequestFunction(l.Subject_id.ToString(), "https://localhost:44307/api/Subjects/GetSubjectNameByUuid") + "\n" + await questionF.makeRequestFunction(l.Teacher_id.ToString(), "https://localhost:44307/api/Teachers/GetTeacherNameByUuid");
+                                    list[j - 7].Poniedzialek = await questionF.makeRequestFunction(l.Subject_id.ToString(), "https://localhost:44307/api/Subjects/GetSubjectNameByUuid") + "\n" + l.Classroom + "\n" + await questionF.makeRequestFunction(l.Teacher_id.ToString(), "https://localhost:44307/api/Teachers/GetTeacherNameByUuid");
                                 }
                                 else if (i == 1) // Gdy dzień jest wtorkiem
                                 {
                                     // Wpisanie do DataGridu stosownego wpisu lekcyjnego
-                                    list[j - 7].Wtorek = await questionF.makeRequestFunction(l.Subject_id.ToString(), "https://localhost:44307/api/Subjects/GetSubjectNameByUuid") + "\n" + await questionF.makeRequestFunction(l.Teacher_id.ToString(), "https://localhost:44307/api/Teachers/GetTeacherNameByUuid");
+                                    list[j - 7].Wtorek = await questionF.makeRequestFunction(l.Subject_id.ToString(), "https://localhost:44307/api/Subjects/GetSubjectNameByUuid") + "\n" + l.Classroom + "\n" + await questionF.makeRequestFunction(l.Teacher_id.ToString(), "https://localhost:44307/api/Teachers/GetTeacherNameByUuid");
                                 }
                                 else if (i == 2) // Gdy dzień jest środą
                                 {
                                     // Wpisanie do DataGridu stosownego wpisu lekcyjnego
-                                    list[j - 7].Sroda = await questionF.makeRequestFunction(l.Subject_id.ToString(), "https://localhost:44307/api/Subjects/GetSubjectNameByUuid") + "\n" + await questionF.makeRequestFunction(l.Teacher_id.ToString(), "https://localhost:44307/api/Teachers/GetTeacherNameByUuid");
+                                    list[j - 7].Sroda = await questionF.makeRequestFunction(l.Subject_id.ToString(), "https://localhost:44307/api/Subjects/GetSubjectNameByUuid") + "\n" + l.Classroom + "\n" + await questionF.makeRequestFunction(l.Teacher_id.ToString(), "https://localhost:44307/api/Teachers/GetTeacherNameByUuid");
                                 }
                                 else if (i == 3) // Gdy dzień jest czwartkiem
                                 {
                                     // Wpisanie do DataGridu stosownego wpisu lekcyjnego
-                                    list[j - 7].Czwartek = await questionF.makeRequestFunction(l.Subject_id.ToString(), "https://localhost:44307/api/Subjects/GetSubjectNameByUuid") + "\n" + await questionF.makeRequestFunction(l.Teacher_id.ToString(), "https://localhost:44307/api/Teachers/GetTeacherNameByUuid");
+                                    list[j - 7].Czwartek = await questionF.makeRequestFunction(l.Subject_id.ToString(), "https://localhost:44307/api/Subjects/GetSubjectNameByUuid") + "\n" + l.Classroom + "\n" + await questionF.makeRequestFunction(l.Teacher_id.ToString(), "https://localhost:44307/api/Teachers/GetTeacherNameByUuid");
                                 }
                                 else if (i == 4) // Gdy dzień jest piątkiem
                                 {
                                     // Wpisanie do DataGridu stosownego wpisu lekcyjnego
-                                    list[j - 7].Piatek = await questionF.makeRequestFunction(l.Subject_id.ToString(), "https://localhost:44307/api/Subjects/GetSubjectNameByUuid") + "\n" + await questionF.makeRequestFunction(l.Teacher_id.ToString(), "https://localhost:44307/api/Teachers/GetTeacherNameByUuid");
+                                    list[j - 7].Piatek = await questionF.makeRequestFunction(l.Subject_id.ToString(), "https://localhost:44307/api/Subjects/GetSubjectNameByUuid") + "\n" + l.Classroom + "\n" + await questionF.makeRequestFunction(l.Teacher_id.ToString(), "https://localhost:44307/api/Teachers/GetTeacherNameByUuid");
                                 }
                                 break; // Przerwanie pętli
                             }
@@ -279,8 +279,6 @@ namespace Dziennik_Szkolny
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
-
 
         private void Plan_Selected(object sender, RoutedEventArgs e)
         {

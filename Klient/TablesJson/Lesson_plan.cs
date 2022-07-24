@@ -21,6 +21,7 @@ namespace Dziennik_Szkolny
         public Teachers Teacher { get; set; }
         public int Start_time { get; set; }
         public int Day { get; set; }
+        public int Classroom { get; set; }
 
     }
 }
