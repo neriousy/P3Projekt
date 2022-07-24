@@ -8,6 +8,7 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace Dziennik_Szkolny
 {
@@ -151,6 +152,7 @@ namespace Dziennik_Szkolny
                 string message = "error: " + ex.Message.ToString(); // Utworzenie wiadomości błędu
                 MessageBox.Show(message, caption, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error); // Wyświetlenie okienka błędu
             }
+            await startPlan(); // Wypełnienie planu w tle
         }
 
         /// <summary>
@@ -188,6 +190,88 @@ namespace Dziennik_Szkolny
                 string message = "error: " + ex.Message.ToString(); // Utworzenie wiadomości błędu
                 MessageBox.Show(message, caption, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error); // Wyświetlenie okienka błędu
             }
+            await startPlan(); // Wypełnienie planu w tle
+        }
+
+        /// <summary>
+        /// Metoda wypełniająca plan lekcji asynchronicznie
+        /// </summary>
+        /// <returns></returns>
+
+        private async Task startPlan()
+        {
+            // Utworzenie potrzebnej zmiennej i interfejsu
+            string resultPlan;
+            ICollection<Lesson_plan> planLekcji;
+            RestPlan question = new RestPlan(); // Utworzenie obiektu klasy RestPlan
+            RestFunction questionF = new RestFunction(); // Utworzenie obiektu klasy RestFunction
+            try
+            {
+                var list = new ObservableCollection<DataObject>(); // Utworzenie dynamicznej kolekcji danych
+                list.Add(new DataObject() { Godziny = "Godziny zajęć", Poniedzialek = "Poniedziałek", Wtorek = "Wtorek", Sroda = "Środa", Czwartek = "Czwartek", Piatek = "Piątek" }); // Wpisanie do DataGridu stosownego wpisu
+                list.Add(new DataObject() { Godziny = "8" }); // Wpisanie do DataGridu stosownego wpisu godziny rozpoczęcia
+                list.Add(new DataObject() { Godziny = "9" }); // Wpisanie do DataGridu stosownego wpisu godziny rozpoczęcia
+                list.Add(new DataObject() { Godziny = "10" }); // Wpisanie do DataGridu stosownego wpisu godziny rozpoczęcia
+                list.Add(new DataObject() { Godziny = "11" }); // Wpisanie do DataGridu stosownego wpisu godziny rozpoczęcia
+                list.Add(new DataObject() { Godziny = "12" }); // Wpisanie do DataGridu stosownego wpisu godziny rozpoczęcia
+                list.Add(new DataObject() { Godziny = "13" }); // Wpisanie do DataGridu stosownego wpisu godziny rozpoczęcia
+                list.Add(new DataObject() { Godziny = "14" }); // Wpisanie do DataGridu stosownego wpisu godziny rozpoczęcia
+                list.Add(new DataObject() { Godziny = "15" }); // Wpisanie do DataGridu stosownego wpisu godziny rozpoczęcia
+                for (int i = 0; i < 5; i++) // Pętla po dniach tygodnia
+                {
+                    resultPlan = await question.makeRequestFunction(stud.class_id.ToString(), i, "https://localhost:44307/api/LessonPlan/GetLessonPlanForTheDay"); // Wysłanie zapytania o planie lekcji danego dnia ucznia
+                    var jplan = JObject.Parse(resultPlan); // Wypełnienie obiektu JObject z ciągu zawierającego dane JSON
+                    planLekcji = JsonConvert.DeserializeObject<ICollection<Lesson_plan>>(jplan.ToString()); // Deserializacja informacji o zajęciach danego dnia
+                    for (int j = 8; j < 16; j++) // Pętla po godzinach lekcyjnych
+                    {
+                        foreach (Lesson_plan l in planLekcji) // Pętla po wszystkich lekcjach danego dnia
+                        {
+                            if (l.Start_time == j) // Gdy godzina rozpoczącia jest równa godzinie na planie
+                            {
+                                if (i == 0) // Gdy dzień jest poniedziałkiem
+                                {
+                                    // Wpisanie do DataGridu stosownego wpisu lekcyjnego
+                                    list[j - 7].Poniedzialek = await questionF.makeRequestFunction(l.Subject_id.ToString(), "https://localhost:44307/api/Subjects/GetSubjectNameByUuid") + "\n" + await questionF.makeRequestFunction(l.Teacher_id.ToString(), "https://localhost:44307/api/Teachers/GetTeacherNameByUuid");
+                                }
+                                else if (i == 1) // Gdy dzień jest wtorkiem
+                                {
+                                    // Wpisanie do DataGridu stosownego wpisu lekcyjnego
+                                    list[j - 7].Wtorek = await questionF.makeRequestFunction(l.Subject_id.ToString(), "https://localhost:44307/api/Subjects/GetSubjectNameByUuid") + "\n" + await questionF.makeRequestFunction(l.Teacher_id.ToString(), "https://localhost:44307/api/Teachers/GetTeacherNameByUuid");
+                                }
+                                else if (i == 2) // Gdy dzień jest środą
+                                {
+                                    // Wpisanie do DataGridu stosownego wpisu lekcyjnego
+                                    list[j - 7].Sroda = await questionF.makeRequestFunction(l.Subject_id.ToString(), "https://localhost:44307/api/Subjects/GetSubjectNameByUuid") + "\n" + await questionF.makeRequestFunction(l.Teacher_id.ToString(), "https://localhost:44307/api/Teachers/GetTeacherNameByUuid");
+                                }
+                                else if (i == 3) // Gdy dzień jest czwartkiem
+                                {
+                                    // Wpisanie do DataGridu stosownego wpisu lekcyjnego
+                                    list[j - 7].Czwartek = await questionF.makeRequestFunction(l.Subject_id.ToString(), "https://localhost:44307/api/Subjects/GetSubjectNameByUuid") + "\n" + await questionF.makeRequestFunction(l.Teacher_id.ToString(), "https://localhost:44307/api/Teachers/GetTeacherNameByUuid");
+                                }
+                                else if (i == 4) // Gdy dzień jest piątkiem
+                                {
+                                    // Wpisanie do DataGridu stosownego wpisu lekcyjnego
+                                    list[j - 7].Piatek = await questionF.makeRequestFunction(l.Subject_id.ToString(), "https://localhost:44307/api/Subjects/GetSubjectNameByUuid") + "\n" + await questionF.makeRequestFunction(l.Teacher_id.ToString(), "https://localhost:44307/api/Teachers/GetTeacherNameByUuid");
+                                }
+                                break; // Przerwanie pętli
+                            }
+                            else if (l.Start_time > j) // Gdy godzina rozpoczącia jest większa godzinie na planie
+                            {
+                                break; // Przerwanie pętli
+                            }
+                        }
+                    }
+                }
+
+                this.planZajec.ItemsSource = list; // Ustawienie kolekcji do generowania
+                planZajec.RowHeight = 65; // Zmienienie wysokości wierszy
+            }
+            catch (Exception ex)
+            {
+                string caption = "Error"; // Utworzenie nagłówku błędu
+                string message = "error: " + ex.Message.ToString(); // Utworzenie wiadomości błędu
+                MessageBox.Show(message, caption, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error); // Wyświetlenie okienka błędu
+            }
         }
 
         /// <summary>
@@ -195,6 +279,8 @@ namespace Dziennik_Szkolny
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+
+
 
         private void Plan_Selected(object sender, RoutedEventArgs e)
         {
@@ -204,19 +290,6 @@ namespace Dziennik_Szkolny
             ocenyShow.Visibility = Visibility.Hidden;
             planZajec.Visibility = Visibility.Visible;
             body.Text = "";
-            var list = new ObservableCollection<DataObject>();
-            list.Add(new DataObject() { Godziny = "Godziny zajęć", Poniedzialek = "Poniedziałek", Wtorek = "Wtorek", Sroda = "Środa", Czwartek = "Czwartek", Piatek = "Piątek" });
-            list.Add(new DataObject() { Godziny = "8"});
-            list.Add(new DataObject() { Godziny = "9"});
-            list.Add(new DataObject() { Godziny = "10"});
-            list.Add(new DataObject() { Godziny = "11"});
-            list.Add(new DataObject() { Godziny = "12"});
-            list.Add(new DataObject() { Godziny = "13"});
-            list.Add(new DataObject() { Godziny = "14"});
-            list.Add(new DataObject() { Godziny = "15"});
-            list[2].Poniedzialek = "XDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXD";
-            this.planZajec.ItemsSource = list;
-            planZajec.RowHeight = 65;
         }
 
         /// <summary>
